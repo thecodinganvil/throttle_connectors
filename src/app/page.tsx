@@ -241,6 +241,80 @@ export default function Home() {
           <SocialIcons />
         </footer>
       </section>
+
+      {/* ═══════ ABOUT US SECTION ═══════ */}
+      <section id="about" className="relative w-full bg-[#0a0a0a] px-5 py-20 sm:px-8 md:px-12 lg:px-20 md:py-28">
+        {/* Heading Row: Label + Large Text */}
+        <div className="flex flex-col md:flex-row md:items-start gap-12 md:gap-20 mb-56 md:mb-72">
+          {/* Section label (Left) */}
+          <div className="flex items-center gap-3 flex-shrink-0 md:pt-4">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+            </span>
+            <span className="text-sm font-medium tracking-[0.2em] uppercase text-white/70">
+              About Us
+            </span>
+          </div>
+
+          {/* Large heading (Right) */}
+          <h2 className="about-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-5xl">
+            Your Complete Pathway to Professional Motorsport
+          </h2>
+        </div>
+
+        {/* Content grid: photo left + text right */}
+        <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-10 md:gap-12 lg:gap-20 items-start">
+          {/* Left — photo placeholder */}
+          <div className="relative w-full aspect-[4/5] overflow-hidden">
+            <div className="absolute inset-0 bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
+              <span className="text-white/20 text-sm tracking-widest uppercase">Photo</span>
+            </div>
+          </div>
+
+          {/* Right — text + small photo */}
+          <div className="flex flex-col justify-center md:pt-16 lg:pt-24 gap-6">
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-md">
+              Throttle Connectors is a motorsport company built to turn
+              racing dreams into reality. Our mission is simple: to make
+              motorsport affordable and accessible for everyone who has
+              the passion to race.
+            </p>
+
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-md">
+              From academy programs to driver management and
+              sponsorship support, we help racers grow step by step and
+              reach the next level in their motorsport journey. We don&apos;t just
+              train drivers. We build careers. Throttle Connectors is
+              here to support your racing dream.
+            </p>
+
+            {/* CTA + small photo row */}
+            <div className="flex items-end justify-between gap-6 mt-6">
+              {/* CTA button */}
+              {/* CTA button */}
+              <a href="#contact" className="cta-button group flex-shrink-0">
+                <span className="text-sm sm:text-base font-medium tracking-wide z-10">
+                  Let&apos;s Get Started
+                </span>
+                <span className="cta-icon-wrapper">
+                  <svg className="cta-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </span>
+              </a>
+
+              {/* Small photo placeholder */}
+              <div className="relative w-32 h-24 sm:w-40 sm:h-28 md:w-44 md:h-32 overflow-hidden flex-shrink-0">
+                <div className="absolute inset-0 bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
+                  <span className="text-white/20 text-xs tracking-widest uppercase">Photo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
