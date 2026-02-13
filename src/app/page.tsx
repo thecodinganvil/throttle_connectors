@@ -24,6 +24,16 @@ export default function Home() {
   const socialsRef = useRef<HTMLDivElement>(null);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  /* ── Track Scroll for Navbar ── */
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   /* ── Toggle menu ── */
   const toggleMenu = useCallback(() => {
@@ -122,6 +132,28 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
 
+  /* ── Academy stacking animation ── */
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray<HTMLElement>(".academy-card");
+      cards.forEach((card, i) => {
+        if (i === cards.length - 1) return;
+        
+        gsap.to(card, {
+          scale: 0.95,
+          ease: "none",
+          scrollTrigger: {
+            trigger: cards[i + 1],
+            start: "top bottom",
+            end: `top ${100 + (i * 40) + 40}px`,
+            scrub: true,
+          },
+        });
+      });
+    });
+    return () => ctx.revert();
+  }, []);
+
   /* ── Social icon SVGs (shared between footer & menu) ── */
   const SocialIcons = ({ className = "" }: { className?: string }) => (
     <div className={`flex items-center gap-4 sm:gap-5 ${className}`}>
@@ -147,41 +179,95 @@ export default function Home() {
 
   return (
     <div ref={wrapperRef}>
-      {/* ═══════ FIXED HAMBURGER BUTTON (always on top) ═══════ */}
-      <button
-        aria-label={menuOpen ? "Close menu" : "Open menu"}
-        className={`hamburger-btn fixed top-4 right-4 sm:top-6 sm:right-8 md:top-8 md:right-12 z-[60] ${menuOpen ? "open" : ""}`}
-        onClick={toggleMenu}
-      >
-        <span className="hamburger-line" />
-        <span className="hamburger-line" />
-      </button>
-
       {/* ═══════ FULL-SCREEN MENU OVERLAY ═══════ */}
       <div
         ref={overlayRef}
         className={`menu-overlay ${menuOpen ? "open" : ""}`}
       >
-        <nav className="flex flex-col gap-2">
-          {NAV_LINKS.map((link, i) => (
-            <a
-              key={link.href}
-              ref={(el) => { linkRefs.current[i] = el; }}
-              href={link.href}
-              className="menu-link"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full h-full">
+          {/* Left Column: Links */}
+          <div className="flex flex-col justify-center px-10 md:px-20 py-20">
+            <nav className="flex flex-col gap-6">
+              {NAV_LINKS.map((link, i) => (
+                <a
+                  key={link.href}
+                  ref={(el) => { linkRefs.current[i] = el; }}
+                  href={link.href}
+                  className="menu-link-large"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
 
-        <div ref={dividerRef} className="menu-divider origin-left" />
+            <div ref={dividerRef} className="menu-divider-large opacity-20" />
 
-        <div ref={socialsRef} className="menu-socials">
-          <SocialIcons />
+            <div ref={socialsRef} className="menu-socials">
+              <SocialIcons />
+            </div>
+          </div>
+
+          {/* Right Column: Image (Desktop Only) */}
+          <div className="hidden md:block relative h-full w-full overflow-hidden p-24 lg:p-32 xl:p-48">
+            <div className="w-full h-full relative rounded-2xl overflow-hidden group/menu-img">
+              <Image 
+                src="/assets/racing-team.jpg" 
+                alt="Racing team" 
+                fill 
+                className="object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover/menu-img:scale-100"
+              />
+              <div className="absolute inset-0 bg-black/20" />
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* ═══════ FIXED HEADER ═══════ */}
+      <header 
+        className={`fixed top-0 left-0 w-full z-[80] transition-all duration-500 px-5 py-3 sm:px-8 sm:py-4 md:px-12 md:py-4 ${
+          scrolled && !menuOpen ? "bg-black/60 backdrop-blur-xl" : "bg-transparent"
+        }`}
+      >
+        <div className="flex items-center justify-between w-full">
+          <div className="flex-shrink-0">
+            <Image
+              src="/assets/throttle.png"
+              alt="Throttle Connectors logo"
+              width={120}
+              height={120}
+              priority
+              className="h-[70px] w-[70px] object-contain sm:h-[90px] sm:w-[90px] md:h-[110px] md:w-[110px] transition-all duration-500"
+            />
+          </div>
+
+          {/* Centered nav pills (Hidden when menu is open) */}
+          <nav className={`hidden items-center gap-4 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${
+            menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}>
+            <a href="#about" className="nav-pill">About Us</a>
+            <a href="#academy" className="nav-pill">Academy</a>
+            <a href="#contact" className="nav-pill">Contact</a>
+          </nav>
+
+          {/* Hamburger Button (Aligned with nav) */}
+          <button
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            className={`hamburger-btn z-[70] flex items-center gap-3 ${menuOpen ? "open" : ""}`}
+            onClick={toggleMenu}
+          >
+            {menuOpen && (
+              <span className="text-white text-sm font-medium tracking-widest uppercase opacity-80">
+                Close
+              </span>
+            )}
+            <div className="flex flex-col items-end gap-[7px]">
+              <span className="hamburger-line" />
+              <span className="hamburger-line" />
+            </div>
+          </button>
+        </div>
+      </header>
 
       {/* ═══════ HERO SECTION ═══════ */}
       <section
@@ -201,27 +287,6 @@ export default function Home() {
           </video>
           <div className="absolute inset-0 bg-black/60" />
         </div>
-
-        {/* ── Header / Navigation ── */}
-        <header className="relative z-10 flex w-full items-center px-5 py-4 sm:px-8 sm:py-6 md:px-12 md:py-8">
-          <div className="flex-shrink-0">
-            <Image
-              src="/assets/throttle.png"
-              alt="Throttle Connectors logo"
-              width={110}
-              height={110}
-              priority
-              className="h-[70px] w-[70px] object-contain sm:h-[90px] sm:w-[90px] md:h-[110px] md:w-[110px]"
-            />
-          </div>
-
-          {/* Centered nav pills */}
-          <nav className="hidden items-center gap-4 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a href="#about" className="nav-pill">About Us</a>
-            <a href="#academy" className="nav-pill">Academy</a>
-            <a href="#contact" className="nav-pill">Contact</a>
-          </nav>
-        </header>
 
         {/* ── Hero Centre ── */}
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 sm:px-6">
@@ -244,9 +309,7 @@ export default function Home() {
 
       {/* ═══════ ABOUT US SECTION ═══════ */}
       <section id="about" className="relative w-full bg-[#0a0a0a] px-5 py-20 sm:px-8 md:px-12 lg:px-20 md:py-28">
-        {/* Heading Row: Label + Large Text */}
         <div className="flex flex-col md:flex-row md:items-start gap-12 md:gap-20 mb-56 md:mb-72">
-          {/* Section label (Left) */}
           <div className="flex items-center gap-3 flex-shrink-0 md:pt-4">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
@@ -257,22 +320,18 @@ export default function Home() {
             </span>
           </div>
 
-          {/* Large heading (Right) */}
           <h2 className="about-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-5xl">
             Your Complete Pathway to Professional Motorsport
           </h2>
         </div>
 
-        {/* Content grid: photo left + text right */}
         <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-10 md:gap-12 lg:gap-20 items-start">
-          {/* Left — photo placeholder */}
           <div className="relative w-full aspect-[4/5] overflow-hidden">
             <div className="absolute inset-0 bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
               <span className="text-white/20 text-sm tracking-widest uppercase">Photo</span>
             </div>
           </div>
 
-          {/* Right — text + small photo */}
           <div className="flex flex-col justify-center md:pt-16 lg:pt-24 gap-6">
             <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-md">
               Throttle Connectors is a motorsport company built to turn
@@ -289,10 +348,7 @@ export default function Home() {
               here to support your racing dream.
             </p>
 
-            {/* CTA + small photo row */}
             <div className="flex items-end justify-between gap-6 mt-6">
-              {/* CTA button */}
-              {/* CTA button */}
               <a href="#contact" className="cta-button group flex-shrink-0">
                 <span className="text-sm sm:text-base font-medium tracking-wide z-10">
                   Let&apos;s Get Started
@@ -305,7 +361,6 @@ export default function Home() {
                 </span>
               </a>
 
-              {/* Small photo placeholder */}
               <div className="relative w-32 h-24 sm:w-40 sm:h-28 md:w-44 md:h-32 overflow-hidden flex-shrink-0">
                 <div className="absolute inset-0 bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
                   <span className="text-white/20 text-xs tracking-widest uppercase">Photo</span>
@@ -313,6 +368,77 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════ ACADEMY PROGRAMS SECTION ═══════ */}
+      <section id="academy" className="relative w-full bg-[#0a0a0a] px-5 py-24 sm:px-8 md:px-12 md:py-40 flex flex-col items-center justify-center pb-[20vh]">
+        <h2 className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none tracking-tight text-left w-full max-w-6xl mb-20 md:mb-32">
+          <div>OUR</div>
+          <div>UPCOMING</div>
+          <div>ACADEMY</div>
+          <div>PROGRAMS</div>
+          <div>AROUND</div>
+          <div>INDIA</div>
+        </h2>
+
+        {/* Academy Cards List */}
+        <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+          {[
+            { city: "BANGALORE", title: "KARTING & FORMULA CAR", status: "Starts Soon" },
+            { city: "HYDERABAD", title: "KARTING & FORMULA CAR", status: "Coming Soon" },
+            { city: "AHMEDABAD", title: "KARTING & FORMULA CAR", status: "Coming Soon" },
+            { city: "COIMBATORE", title: "KARTING & FORMULA CAR", status: "Coming Soon" }
+          ].map((program, idx) => (
+            <div
+              key={idx}
+              className="academy-card sticky w-full mb-8 md:mb-12"
+              style={{ 
+                top: `${100 + (idx * 40)}px`,
+                zIndex: idx + 1
+              }}
+            >
+              <article className="w-full group bg-[#0e0e0e] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
+                {/* Banner Image */}
+                <div className="relative w-full aspect-[21/7] md:aspect-[24/7] bg-[#1a1a1a] overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('/placeholder-racing.jpg')] bg-cover bg-center opacity-60 grayscale-[20%]" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center select-none">
+                    <div className="font-[family-name:var(--font-bebas)] italic tracking-tight scale-90 sm:scale-100">
+                      <div className="text-[#f1b42f] text-3xl sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-[4px_4px_0px_rgba(0,0,0,0.8)]">
+                        {program.city} BE READY FOR
+                      </div>
+                      <div className="relative mt-2 items-center justify-center inline-flex">
+                        <div className="absolute inset-0 bg-black/90 -skew-x-12 translate-y-1" />
+                        <div className="relative text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl px-8 py-2 drop-shadow-[4px_4px_0px_rgba(0,0,0,0.5)]">
+                          {program.title}
+                        </div>
+                      </div>
+                      <div className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-1 drop-shadow-[4px_4px_0px_rgba(0,0,0,0.5)]">
+                        ACADEMY
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-3 sm:p-4 md:p-5 bg-[#0e0e0e]">
+                  <div className="flex items-center justify-between p-6 sm:p-7 md:p-8 bg-[#222222] rounded-[1.5rem] group-hover:bg-cyan transition-colors duration-500">
+                    <div className="flex flex-col gap-1">
+                      <h3 className="font-[family-name:var(--font-bebas)] text-cyan group-hover:text-black text-2xl sm:text-3xl md:text-4xl tracking-wide transition-colors duration-500">
+                        {program.city} ACADEMY
+                      </h3>
+                      <p className="text-white/40 group-hover:text-black/40 text-base transition-colors duration-500">{program.status}</p>
+                    </div>
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#333333] group-hover:bg-black flex items-center justify-center transition-all duration-500">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-cyan transition-colors duration-500">
+                        <path d="M5 12h14m-7-7 7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          ))}
         </div>
       </section>
     </div>
