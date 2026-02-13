@@ -134,28 +134,6 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
 
-  /* ── Academy stacking animation ── */
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray<HTMLElement>(".academy-card");
-      cards.forEach((card, i) => {
-        if (i === cards.length - 1) return;
-        
-        gsap.to(card, {
-          scale: 0.95,
-          ease: "none",
-          scrollTrigger: {
-            trigger: cards[i + 1],
-            start: "top bottom",
-            end: `top ${100 + (i * 40) + 40}px`,
-            scrub: true,
-          },
-        });
-      });
-    });
-    return () => ctx.revert();
-  }, []);
-
   /* ── Testimonial horizontal scroll ── */
   useEffect(() => {
     const section = testimonialSectionRef.current;
@@ -420,9 +398,9 @@ export default function Home() {
           ].map((program, idx) => (
             <div
               key={idx}
-              className="academy-card sticky w-full mb-8 md:mb-12"
+              className="academy-card sticky w-full mb-24 md:mb-32"
               style={{ 
-                top: `${100 + (idx * 40)}px`,
+                top: "120px",
                 zIndex: idx + 1
               }}
             >
