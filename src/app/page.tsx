@@ -596,6 +596,94 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ═══════ FOOTER ═══════ */}
+      <footer className="relative w-full bg-black px-8 sm:px-12 md:px-16 lg:px-24 pt-20 md:pt-28 pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 lg:gap-24 mb-20">
+          {/* Left: Newsletter */}
+          <div className="flex flex-col gap-6">
+            <h3 className="font-[family-name:var(--font-bebas)] text-white text-xl sm:text-2xl tracking-wide uppercase">
+              Receive Update News
+            </h3>
+            <div className="flex flex-col gap-4">
+              <input
+                type="email"
+                placeholder="Enter your mail"
+                className="bg-transparent border-b border-white/20 text-white/70 text-sm pb-3 outline-none focus:border-white/50 transition-colors placeholder:text-white/30 w-full max-w-xs"
+              />
+              <a href="#" className="cta-button group mt-2 self-start">
+                <span className="text-sm font-medium tracking-wide z-10">
+                  Subscribe
+                </span>
+                <span className="cta-icon-wrapper">
+                  <svg className="cta-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right: Three columns */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8">
+            {/* Navigation */}
+            <div className="flex flex-col gap-5">
+              <div className="flex items-center gap-2">
+                <span className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                </span>
+                <span className="text-white/60 text-sm tracking-wider">Navigation</span>
+              </div>
+              <div className="flex flex-col gap-3 mt-2">
+                <a href="#about" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">About Us</a>
+                <a href="#academy" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Academy</a>
+                <a href="#contact" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Contact</a>
+              </div>
+            </div>
+
+            {/* Socials */}
+            <div className="flex flex-col gap-5">
+              <div className="flex items-center gap-2">
+                <span className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                </span>
+                <span className="text-white/60 text-sm tracking-wider">Socials</span>
+              </div>
+              <div className="flex flex-col gap-3 mt-2">
+                <a href="#" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">X. Twitter</a>
+                <a href="#" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Instagram</a>
+                <a href="#" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">LinkedIn</a>
+              </div>
+            </div>
+
+            {/* Get in touch */}
+            <div className="flex flex-col gap-5">
+              <div className="flex items-center gap-2">
+                <span className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                </span>
+                <span className="text-white/60 text-sm tracking-wider">Get in touch</span>
+              </div>
+              <div className="flex flex-col gap-3 mt-2">
+                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">+91 8467042523</span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">throttleconnectors@gmail.com</span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">Uttar Pradesh</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom copyright */}
+        <div className="border-t border-white/10 pt-8 text-center">
+          <p className="text-white/40 text-sm tracking-wide">
+            ©2026 Throttle Connectors Copyright All Rights Reserved
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

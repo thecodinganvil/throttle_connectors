@@ -234,8 +234,8 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px; /* Space between text and icon */
-  padding: 8px 8px 8px 24px; /* Left padding for text, right padding is handled by icon spacing */
+  gap: 10px; /* Space between text and icon */
+  padding: 6px 6px 6px 20px; /* Adjusted padding for smaller size */
   border-radius: 9999px;
   color: #ffffff;
   text-decoration: none;
@@ -253,7 +253,7 @@ body.menu-open {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 56px; /* Initial size covering the icon circle */
+  width: 44px; /* Reduced initial size */
   background: var(--cyan);
   border-radius: 9999px;
   transition: width 0.5s cubic-bezier(0.65, 0, 0.35, 1); /* Smooth eased expansion */
@@ -273,8 +273,8 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 32px; /* Reduced wrapper size */
+  height: 32px; /* Reduced wrapper size */
   z-index: 2;
 }
 .cta-icon-svg {
