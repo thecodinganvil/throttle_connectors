@@ -22,6 +22,8 @@ export default function Home() {
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const dividerRef = useRef<HTMLDivElement>(null);
   const socialsRef = useRef<HTMLDivElement>(null);
+  const testimonialSectionRef = useRef<HTMLElement>(null);
+  const testimonialTrackRef = useRef<HTMLDivElement>(null);
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -154,6 +156,32 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
 
+  /* ── Testimonial horizontal scroll ── */
+  useEffect(() => {
+    const section = testimonialSectionRef.current;
+    const track = testimonialTrackRef.current;
+    if (!section || !track) return;
+
+    const ctx = gsap.context(() => {
+      const totalScroll = track.scrollWidth - window.innerWidth;
+
+      gsap.to(track, {
+        x: -totalScroll,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: () => `+=${totalScroll}`,
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+    });
+    return () => ctx.revert();
+  }, []);
+
   /* ── Social icon SVGs (shared between footer & menu) ── */
   const SocialIcons = ({ className = "" }: { className?: string }) => (
     <div className={`flex items-center gap-4 sm:gap-5 ${className}`}>
@@ -225,7 +253,7 @@ export default function Home() {
 
       {/* ═══════ FIXED HEADER ═══════ */}
       <header 
-        className={`fixed top-0 left-0 w-full z-[80] transition-all duration-500 px-5 py-3 sm:px-8 sm:py-4 md:px-12 md:py-4 ${
+        className={`fixed top-0 left-0 w-full z-[80] transition-all duration-500 px-5 py-2 sm:px-8 sm:py-3 md:px-12 md:py-3 ${
           scrolled && !menuOpen ? "bg-black/60 backdrop-blur-xl" : "bg-transparent"
         }`}
       >
@@ -234,10 +262,10 @@ export default function Home() {
             <Image
               src="/assets/throttle.png"
               alt="Throttle Connectors logo"
-              width={120}
-              height={120}
+              width={100}
+              height={100}
               priority
-              className="h-[70px] w-[70px] object-contain sm:h-[90px] sm:w-[90px] md:h-[110px] md:w-[110px] transition-all duration-500"
+              className="h-[55px] w-[55px] object-contain sm:h-[70px] sm:w-[70px] md:h-[85px] md:w-[85px] transition-all duration-500"
             />
           </div>
 
@@ -439,6 +467,133 @@ export default function Home() {
               </article>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ═══════ TESTIMONIALS — HORIZONTAL SCROLL ═══════ */}
+      <section
+        ref={testimonialSectionRef}
+        id="testimonials"
+        className="relative w-full bg-[#0a0a0a] overflow-hidden"
+      >
+        <div
+          ref={testimonialTrackRef}
+          className="flex items-center gap-0 h-screen will-change-transform"
+          style={{ width: "fit-content" }}
+        >
+          {/* ── First panel: Section heading ── */}
+          <div className="flex-shrink-0 w-screen h-screen flex flex-col justify-center px-8 sm:px-12 md:px-20 lg:px-28">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+              </span>
+              <span className="text-sm font-medium tracking-[0.2em] uppercase text-white/70">
+                Testimonials
+              </span>
+            </div>
+            <h2 className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.95] tracking-tight uppercase max-w-4xl">
+              What Our<br />Racers<br />Say About Us
+            </h2>
+            <div className="mt-10 flex items-center gap-3">
+              <div className="w-16 h-[1px] bg-cyan/40" />
+              <span className="text-white/40 text-sm tracking-widest uppercase">Scroll →</span>
+            </div>
+          </div>
+
+          {/* ── Testimonial cards ── */}
+          {[
+            {
+              num: "01",
+              quote: "Throttle Connectors gave me the platform I had been dreaming of. The coaching is world-class and the team genuinely cares about every racer's growth.",
+              name: "Christopher L. Morgan",
+              role: "Formula Racer",
+              initials: "CM",
+            },
+            {
+              num: "02",
+              quote: "From my very first session, I knew this was different. The structured programs and mentorship helped me shave seconds off my lap times within weeks.",
+              name: "Arjun Patel",
+              role: "Karting Champion",
+              initials: "AP",
+            },
+            {
+              num: "03",
+              quote: "The academy completely transformed my approach to racing. I went from a hobbyist to competing in national-level karting events. This is the real deal.",
+              name: "Sneha Reddy",
+              role: "National Competitor",
+              initials: "SR",
+            },
+            {
+              num: "04",
+              quote: "What sets them apart is their holistic approach — it's not just driving fast, it's understanding the science of racing. Best investment I've ever made.",
+              name: "Rohan Kapoor",
+              role: "Motorsport Engineer",
+              initials: "RK",
+            },
+          ].map((t, idx) => (
+            <div
+              key={idx}
+              className="flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[50vw] lg:w-[42vw] h-screen flex items-center px-4 sm:px-6"
+            >
+              <div className="relative w-full rounded-[2.5rem] border border-white/10 bg-white/[0.04] backdrop-blur-sm p-8 sm:p-10 md:p-12 flex flex-col justify-between min-h-[420px] md:min-h-[480px] group hover:scale-[1.02] hover:bg-white/[0.07] transition-all duration-500">
+                {/* Decorative large quote */}
+                <div className="absolute top-6 right-8 font-[family-name:var(--font-bebas)] text-white/[0.04] text-[12rem] leading-none select-none pointer-events-none">
+                  &ldquo;
+                </div>
+
+                {/* Number */}
+                <div className="flex items-center justify-between mb-8">
+                  <span className="font-[family-name:var(--font-bebas)] text-white/20 text-6xl sm:text-7xl md:text-8xl tracking-tighter leading-none">
+                    {t.num}
+                  </span>
+                  <div className="flex gap-1">
+                    {[0,1,2,3].map(dot => (
+                      <span key={dot} className={`w-2 h-2 rounded-full ${dot <= idx ? 'bg-cyan' : 'bg-white/15'}`} />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Quote */}
+                <p className="text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light flex-1">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+
+                {/* Divider */}
+                <div className="w-full h-[1px] bg-white/10 my-8" />
+
+                {/* Author */}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-sm font-bold tracking-wide">
+                      {t.initials}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide uppercase">
+                      {t.name}
+                    </span>
+                    <span className="text-white/40 text-sm tracking-wider uppercase">
+                      {t.role}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* ── Last panel: CTA ── */}
+          <div className="flex-shrink-0 w-[60vw] sm:w-[50vw] h-screen flex flex-col items-center justify-center px-8">
+            <span className="font-[family-name:var(--font-bebas)] text-white/10 text-[10rem] sm:text-[14rem] leading-none select-none">
+              ★
+            </span>
+            <p className="font-[family-name:var(--font-bebas)] text-white text-3xl sm:text-4xl md:text-5xl tracking-wide uppercase text-center mt-6">
+              Join 50+ Racers
+            </p>
+            <p className="text-white/40 text-sm tracking-widest uppercase mt-3">
+              Who Trust Throttle Connectors
+            </p>
+          </div>
         </div>
       </section>
     </div>
