@@ -140,24 +140,29 @@ export default function Home() {
     const track = testimonialTrackRef.current;
     if (!section || !track) return;
 
-    const ctx = gsap.context(() => {
-      const totalScroll = track.scrollWidth - window.innerWidth;
+    // Delay to ensure layout is fully rendered before measuring
+    const timer = setTimeout(() => {
+      const ctx = gsap.context(() => {
+        const totalScroll = track.scrollWidth - window.innerWidth;
 
-      gsap.to(track, {
-        x: -totalScroll,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${totalScroll}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
+        gsap.to(track, {
+          x: -totalScroll,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${track.scrollWidth}`,
+            pin: true,
+            scrub: 0.8,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        });
       });
-    });
-    return () => ctx.revert();
+      return () => ctx.revert();
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   /* ── Social icon SVGs (shared between footer & menu) ── */
@@ -378,7 +383,7 @@ export default function Home() {
       </section>
 
       {/* ═══════ ACADEMY PROGRAMS SECTION ═══════ */}
-      <section id="academy" className="relative w-full bg-[#0a0a0a] px-5 py-24 sm:px-8 md:px-12 md:py-40 flex flex-col items-center justify-center pb-[20vh]">
+      <section id="academy" className="relative w-full bg-[#0a0a0a] px-5 py-24 sm:px-8 md:px-12 md:py-40 flex flex-col items-center justify-center">
         <h2 className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none tracking-tight text-left w-full max-w-6xl mb-20 md:mb-32">
           <div>OUR</div>
           <div>UPCOMING</div>
@@ -395,13 +400,13 @@ export default function Home() {
             { city: "HYDERABAD", title: "KARTING & FORMULA CAR", status: "Coming Soon" },
             { city: "AHMEDABAD", title: "KARTING & FORMULA CAR", status: "Coming Soon" },
             { city: "COIMBATORE", title: "KARTING & FORMULA CAR", status: "Coming Soon" }
-          ].map((program, idx) => (
+          ].map((program, idx, arr) => (
             <div
               key={idx}
-              className="academy-card sticky w-full mb-24 md:mb-32"
+              className="academy-card sticky w-full mb-8 md:mb-12"
               style={{ 
-                top: "120px",
-                zIndex: idx + 1
+                top: `${120 + (idx * 30)}px`,
+                zIndex: idx + 1,
               }}
             >
               <article className="w-full group bg-[#0e0e0e] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
