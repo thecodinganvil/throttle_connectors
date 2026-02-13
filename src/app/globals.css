@@ -231,3 +231,72 @@ body.menu-open {
   color: #ffffff;
   will-change: transform, opacity;
 }
+
+/* ===== About Us Heading ===== */
+.about-heading {
+  font-family: var(--font-bebas), "Bebas Neue", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cyan);
+  line-height: 1.05;
+}
+
+/* ===== CTA Button ===== */
+/* ===== CTA Button ===== */
+.cta-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px; /* Space between text and icon */
+  padding: 8px 8px 8px 24px; /* Left padding for text, right padding is handled by icon spacing */
+  border-radius: 9999px;
+  color: #ffffff;
+  text-decoration: none;
+  background: transparent;
+  width: auto;
+  cursor: pointer;
+  isolation: isolate; /* Stacking context */
+  transition: color 0.4s ease;
+}
+
+/* Expanding Cyan Background */
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 56px; /* Initial size covering the icon circle */
+  background: var(--cyan);
+  border-radius: 9999px;
+  transition: width 0.5s cubic-bezier(0.65, 0, 0.35, 1); /* Smooth eased expansion */
+  z-index: -1;
+}
+
+/* Hover State */
+.cta-button:hover {
+  color: #0d0d0d; /* Dark text on cyan */
+}
+.cta-button:hover::before {
+  width: 100%; /* Expands to fill button */
+}
+
+/* Icon Animation */
+.cta-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+}
+.cta-icon-svg {
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), stroke 0.4s ease;
+  stroke: #0a0a0a; /* Default black icon */
+}
+.cta-button:hover .cta-icon-svg {
+  transform: rotate(45deg); /* Plus -> X */
+  stroke: #ffffff; /* Becomes white on hover */
+}
