@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
+import TestimonialsCarousel from "../components/TestimonialsCarousel";
 
 /* ── Menu link data ── */
 const NAV_LINKS = [
@@ -235,7 +236,7 @@ export default function Home() {
 
       {/* ═══════ ABOUT US SECTION ═══════ */}
       <section id="about" className="relative w-full bg-[#0a0a0a] px-5 py-20 sm:px-8 md:px-12 lg:px-20 md:py-28">
-        <div className="flex flex-col md:flex-row md:items-start gap-12 md:gap-20 mb-56 md:mb-72">
+        <div className="flex flex-col md:flex-row md:items-start gap-8 sm:gap-12 md:gap-20 mb-20 sm:mb-36 md:mb-56 lg:mb-72">
           <div className="flex items-center gap-3 flex-shrink-0 md:pt-4">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
@@ -298,8 +299,8 @@ export default function Home() {
       </section>
 
       {/* ═══════ ACADEMY PROGRAMS SECTION ═══════ */}
-      <section id="academy" className="relative w-full bg-[#0a0a0a] px-5 py-24 sm:px-8 md:px-12 md:py-40 flex flex-col items-center justify-center">
-        <h2 className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-none tracking-tight text-left w-full max-w-6xl mb-20 md:mb-32">
+      <section id="academy" className="relative w-full bg-[#0a0a0a] px-4 py-16 sm:px-8 sm:py-24 md:px-12 md:py-40 flex flex-col items-center justify-center">
+        <h2 className="font-[family-name:var(--font-bebas)] text-cyan text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl leading-none tracking-tight text-left w-full max-w-6xl mb-12 sm:mb-20 md:mb-32">
           <div>OUR</div>
           <div>UPCOMING</div>
           <div>ACADEMY</div>
@@ -364,274 +365,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════ TESTIMONIALS — VERTICAL SWIPEABLE ═══════ */}
-      <section
-        id="testimonials"
-        className="relative w-full bg-[#0a0a0a] py-24 md:py-40 px-5 sm:px-8 md:px-12 lg:px-20 overflow-hidden"
-      >
-        {/* Section heading */}
-        <div className="max-w-7xl mx-auto mb-16 md:mb-24">
-          <div className="flex items-center gap-3 mb-8">
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
-            </span>
-            <span className="text-sm font-medium tracking-[0.2em] uppercase text-white/70">
-              Testimonials
-            </span>
-          </div>
-          <h2 className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight uppercase max-w-4xl">
-            What Our Racers Say About Us
-          </h2>
-        </div>
-
-        {/* Vertical marquee container */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left column - scrolls up */}
-          <div className="testimonial-column relative h-[600px] md:h-[700px] overflow-hidden touch-pan-y cursor-grab active:cursor-grabbing">
-            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-            <div className="testimonial-marquee-up flex flex-col gap-6">
-              {[
-                {
-                  num: "01",
-                  quote: "Throttle Connectors gave me the platform I had been dreaming of. The coaching is world-class and the team genuinely cares about every racer's growth.",
-                  name: "Christopher L. Morgan",
-                  role: "Formula Racer",
-                  initials: "CM",
-                },
-                {
-                  num: "02",
-                  quote: "From my very first session, I knew this was different. The structured programs and mentorship helped me shave seconds off my lap times within weeks.",
-                  name: "Arjun Patel",
-                  role: "Karting Champion",
-                  initials: "AP",
-                },
-                {
-                  num: "03",
-                  quote: "The academy completely transformed my approach to racing. I went from a hobbyist to competing in national-level karting events. This is the real deal.",
-                  name: "Sneha Reddy",
-                  role: "National Competitor",
-                  initials: "SR",
-                },
-                {
-                  num: "04",
-                  quote: "What sets them apart is their holistic approach — it's not just driving fast, it's understanding the science of racing. Best investment I've ever made.",
-                  name: "Rohan Kapoor",
-                  role: "Motorsport Engineer",
-                  initials: "RK",
-                },
-              ].concat([
-                {
-                  num: "01",
-                  quote: "Throttle Connectors gave me the platform I had been dreaming of. The coaching is world-class and the team genuinely cares about every racer's growth.",
-                  name: "Christopher L. Morgan",
-                  role: "Formula Racer",
-                  initials: "CM",
-                },
-                {
-                  num: "02",
-                  quote: "From my very first session, I knew this was different. The structured programs and mentorship helped me shave seconds off my lap times within weeks.",
-                  name: "Arjun Patel",
-                  role: "Karting Champion",
-                  initials: "AP",
-                },
-                {
-                  num: "03",
-                  quote: "The academy completely transformed my approach to racing. I went from a hobbyist to competing in national-level karting events. This is the real deal.",
-                  name: "Sneha Reddy",
-                  role: "National Competitor",
-                  initials: "SR",
-                },
-                {
-                  num: "04",
-                  quote: "What sets them apart is their holistic approach — it's not just driving fast, it's understanding the science of racing. Best investment I've ever made.",
-                  name: "Rohan Kapoor",
-                  role: "Motorsport Engineer",
-                  initials: "RK",
-                },
-              ]).map((t, idx) => (
-                <div
-                  key={idx}
-                  className="relative w-full rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8 flex flex-col gap-6 group hover:bg-white/[0.07] transition-all duration-500 select-none"
-                >
-                  {/* Decorative large quote */}
-                  <div className="absolute top-4 right-6 font-[family-name:var(--font-bebas)] text-white/[0.04] text-[8rem] leading-none select-none pointer-events-none">
-                    &ldquo;
-                  </div>
-
-                  {/* Number */}
-                  <div className="flex items-center justify-between">
-                    <span className="font-[family-name:var(--font-bebas)] text-white/20 text-4xl sm:text-5xl tracking-tighter leading-none">
-                      {t.num}
-                    </span>
-                    <div className="flex gap-1">
-                      {[0,1,2,3].map(dot => (
-                        <span key={dot} className={`w-2 h-2 rounded-full ${dot <= (idx % 4) ? 'bg-cyan' : 'bg-white/15'}`} />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Quote */}
-                  <p className="text-white/80 text-base sm:text-lg leading-relaxed font-light">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-
-                  {/* Divider */}
-                  <div className="w-full h-[1px] bg-white/10" />
-
-                  {/* Author */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-white text-xs font-bold tracking-wide">
-                        {t.initials}
-                      </span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-[family-name:var(--font-bebas)] text-white text-lg tracking-wide uppercase">
-                        {t.name}
-                      </span>
-                      <span className="text-white/40 text-xs tracking-wider uppercase">
-                        {t.role}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right column - scrolls down */}
-          <div className="testimonial-column relative h-[600px] md:h-[700px] overflow-hidden hidden md:block touch-pan-y cursor-grab active:cursor-grabbing">
-            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-            <div className="testimonial-marquee-down flex flex-col gap-6">
-              {[
-                {
-                  num: "04",
-                  quote: "What sets them apart is their holistic approach — it's not just driving fast, it's understanding the science of racing. Best investment I've ever made.",
-                  name: "Rohan Kapoor",
-                  role: "Motorsport Engineer",
-                  initials: "RK",
-                },
-                {
-                  num: "03",
-                  quote: "The academy completely transformed my approach to racing. I went from a hobbyist to competing in national-level karting events. This is the real deal.",
-                  name: "Sneha Reddy",
-                  role: "National Competitor",
-                  initials: "SR",
-                },
-                {
-                  num: "02",
-                  quote: "From my very first session, I knew this was different. The structured programs and mentorship helped me shave seconds off my lap times within weeks.",
-                  name: "Arjun Patel",
-                  role: "Karting Champion",
-                  initials: "AP",
-                },
-                {
-                  num: "01",
-                  quote: "Throttle Connectors gave me the platform I had been dreaming of. The coaching is world-class and the team genuinely cares about every racer's growth.",
-                  name: "Christopher L. Morgan",
-                  role: "Formula Racer",
-                  initials: "CM",
-                },
-              ].concat([
-                {
-                  num: "04",
-                  quote: "What sets them apart is their holistic approach — it's not just driving fast, it's understanding the science of racing. Best investment I've ever made.",
-                  name: "Rohan Kapoor",
-                  role: "Motorsport Engineer",
-                  initials: "RK",
-                },
-                {
-                  num: "03",
-                  quote: "The academy completely transformed my approach to racing. I went from a hobbyist to competing in national-level karting events. This is the real deal.",
-                  name: "Sneha Reddy",
-                  role: "National Competitor",
-                  initials: "SR",
-                },
-                {
-                  num: "02",
-                  quote: "From my very first session, I knew this was different. The structured programs and mentorship helped me shave seconds off my lap times within weeks.",
-                  name: "Arjun Patel",
-                  role: "Karting Champion",
-                  initials: "AP",
-                },
-                {
-                  num: "01",
-                  quote: "Throttle Connectors gave me the platform I had been dreaming of. The coaching is world-class and the team genuinely cares about every racer's growth.",
-                  name: "Christopher L. Morgan",
-                  role: "Formula Racer",
-                  initials: "CM",
-                },
-              ]).map((t, idx) => (
-                <div
-                  key={idx}
-                  className="relative w-full rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8 flex flex-col gap-6 group hover:bg-white/[0.07] transition-all duration-500 select-none"
-                >
-                  <div className="absolute top-4 right-6 font-[family-name:var(--font-bebas)] text-white/[0.04] text-[8rem] leading-none select-none pointer-events-none">
-                    &ldquo;
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-[family-name:var(--font-bebas)] text-white/20 text-4xl sm:text-5xl tracking-tighter leading-none">
-                      {t.num}
-                    </span>
-                    <div className="flex gap-1">
-                      {[0,1,2,3].map(dot => (
-                        <span key={dot} className={`w-2 h-2 rounded-full ${dot <= (idx % 4) ? 'bg-cyan' : 'bg-white/15'}`} />
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-white/80 text-base sm:text-lg leading-relaxed font-light">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div className="w-full h-[1px] bg-white/10" />
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-white text-xs font-bold tracking-wide">
-                        {t.initials}
-                      </span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-[family-name:var(--font-bebas)] text-white text-lg tracking-wide uppercase">
-                        {t.name}
-                      </span>
-                      <span className="text-white/40 text-xs tracking-wider uppercase">
-                        {t.role}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Swipe hint on mobile */}
-        <div className="md:hidden flex items-center justify-center gap-3 mt-8">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/30 animate-bounce">
-            <path d="M12 5v14m-7-7 7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          <span className="text-white/30 text-xs tracking-widest uppercase">Swipe to see more</span>
-        </div>
-
-        {/* CTA at bottom */}
-        <div className="max-w-7xl mx-auto mt-16 md:mt-24 flex flex-col items-center text-center">
-          <span className="font-[family-name:var(--font-bebas)] text-white/10 text-[6rem] sm:text-[8rem] leading-none select-none">
-            ★
-          </span>
-          <p className="font-[family-name:var(--font-bebas)] text-white text-3xl sm:text-4xl md:text-5xl tracking-wide uppercase mt-4">
-            Join 50+ Racers
-          </p>
-          <p className="text-white/40 text-sm tracking-widest uppercase mt-3">
-            Who Trust Throttle Connectors
-          </p>
-        </div>
-      </section>
+      {/* ═══════ TESTIMONIALS — HORIZONTAL SWIPE CAROUSEL ═══════ */}
+      <TestimonialsCarousel />
 
       {/* ═══════ FOOTER ═══════ */}
-      <footer className="relative w-full bg-black px-8 sm:px-12 md:px-16 lg:px-24 pt-20 md:pt-28 pb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 lg:gap-24 mb-20">
+      <footer className="relative w-full bg-black px-4 sm:px-8 md:px-16 lg:px-24 pt-14 sm:pt-20 md:pt-28 pb-8 sm:pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 sm:gap-16 lg:gap-24 mb-12 sm:mb-20">
           {/* Left: Newsletter */}
           <div className="flex flex-col gap-6">
             <h3 className="font-[family-name:var(--font-bebas)] text-white text-xl sm:text-2xl tracking-wide uppercase">
@@ -702,7 +441,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-3 mt-2">
                 <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">+91 8467042523</span>
-                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">throttleconnectors@gmail.com</span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all">throttleconnectors@gmail.com</span>
                 <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">Uttar Pradesh</span>
               </div>
             </div>

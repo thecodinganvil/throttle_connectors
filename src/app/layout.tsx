@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   description: "Throttle Connectors — Since 2012",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
