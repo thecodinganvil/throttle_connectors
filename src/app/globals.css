@@ -214,7 +214,68 @@ body.menu-open {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   color: #ffffff;
-  will-change: transform, opacity;
+}
+
+/* ===== Testimonial Vertical Marquee ===== */
+@keyframes marquee-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marquee-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Mobile: slightly faster, still readable */
+.testimonial-marquee-up {
+  animation: marquee-up 40s linear infinite;
+}
+
+.testimonial-marquee-down {
+  animation: marquee-down 40s linear infinite;
+}
+
+/* Desktop: much slower so users can easily read */
+@media (min-width: 768px) {
+  .testimonial-marquee-up {
+    animation: marquee-up 60s linear infinite;
+  }
+  .testimonial-marquee-down {
+    animation: marquee-down 60s linear infinite;
+  }
+}
+
+/* Pause on hover (desktop) */
+.testimonial-marquee-up:hover,
+.testimonial-marquee-down:hover {
+  animation-play-state: paused;
+}
+
+/* Swipeable column — allows manual scroll override */
+.testimonial-column {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.testimonial-column::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Pause animation when user is actively touching/dragging */
+.testimonial-column:active .testimonial-marquee-up,
+.testimonial-column:active .testimonial-marquee-down {
+  animation-play-state: paused;
 }
 
 /* ===== About Us Heading ===== */
