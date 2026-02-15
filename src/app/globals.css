@@ -3,7 +3,7 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --cyan: #59E0F7;
+  --cyan: #59e0f7;
   --cyan-glow: rgba(89, 224, 247, 0.3);
   --dark-bg: #111111;
   --dark-overlay: rgba(0, 0, 0, 0.55);
@@ -136,7 +136,9 @@ body.menu-open {
   text-decoration: none;
   line-height: 1.1;
   position: relative;
-  transition: color 0.35s ease, transform 0.3s ease;
+  transition:
+    color 0.35s ease,
+    transform 0.3s ease;
   display: inline-block;
   will-change: transform;
 }
@@ -167,7 +169,9 @@ body.menu-open {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: color 0.35s ease, border-color 0.35s ease;
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease;
 }
 
 @media (min-width: 640px) {
@@ -210,7 +214,9 @@ body.menu-open {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: color 0.35s ease, border-color 0.35s ease;
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease;
 }
 .nav-pill::before {
   content: "";
@@ -244,7 +250,9 @@ body.menu-open {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   color: var(--cyan);
-  text-shadow: 0 0 40px var(--cyan-glow), 0 0 80px rgba(89, 224, 247, 0.12);
+  text-shadow:
+    0 0 40px var(--cyan-glow),
+    0 0 80px rgba(89, 224, 247, 0.12);
 }
 
 /* ===== CONNECTORS text ===== */
@@ -274,13 +282,21 @@ body.menu-open {
 
 /* ===== Testimonial Vertical Marquee (desktop) ===== */
 @keyframes marquee-up {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 @keyframes marquee-down {
-  0% { transform: translateY(-50%); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .testimonial-marquee-up {
@@ -378,7 +394,9 @@ body.menu-open {
 }
 
 .cta-icon-svg {
-  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), stroke 0.4s ease;
+  transition:
+    transform 0.5s cubic-bezier(0.65, 0, 0.35, 1),
+    stroke 0.4s ease;
   stroke: #0a0a0a; /* Default black icon */
 }
 .cta-button:hover .cta-icon-svg {
@@ -394,12 +412,12 @@ body.menu-open {
     display: flex;
     align-items: center;
   }
-  
+
   .social-icon {
     min-width: 48px;
     min-height: 48px;
   }
-  
+
   .nav-pill {
     min-height: 44px;
     display: inline-flex;

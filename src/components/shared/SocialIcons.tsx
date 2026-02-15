@@ -1,4 +1,8 @@
-export default function SocialIcons({ className = "" }: { className?: string }) {
+export default function SocialIcons({
+  className = "",
+}: {
+  className?: string;
+}) {
   return (
     <div className={`flex items-center gap-4 sm:gap-5 ${className}`}>
       <a
