@@ -72,7 +72,9 @@ function TestimonialCard({
   return (
     <div
       className={`relative w-full rounded-[1.5rem] sm:rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-sm flex flex-col group hover:bg-white/[0.07] transition-all duration-500 select-none ${
-        isCompact ? "p-5 sm:p-6 md:p-8 gap-5 sm:gap-6" : "p-5 sm:p-8 md:p-10 gap-5 sm:gap-6 justify-between min-h-[320px] sm:min-h-[380px] md:min-h-[440px]"
+        isCompact
+          ? "p-5 sm:p-6 md:p-8 gap-5 sm:gap-6"
+          : "p-5 sm:p-8 md:p-10 gap-5 sm:gap-6 justify-between min-h-[320px] sm:min-h-[380px] md:min-h-[440px]"
       }`}
     >
       {/* Decorative large quote */}
@@ -109,7 +111,9 @@ function TestimonialCard({
         {/* Quote */}
         <p
           className={`text-white/80 leading-relaxed font-light ${
-            isCompact ? "text-base sm:text-lg" : "text-lg sm:text-xl md:text-2xl"
+            isCompact
+              ? "text-base sm:text-lg"
+              : "text-lg sm:text-xl md:text-2xl"
           }`}
         >
           &ldquo;{t.quote}&rdquo;
@@ -118,7 +122,9 @@ function TestimonialCard({
 
       {/* Bottom section */}
       <div>
-        <div className={`w-full h-[1px] bg-white/10 ${isCompact ? "my-0 mb-6" : "my-8"}`} />
+        <div
+          className={`w-full h-[1px] bg-white/10 ${isCompact ? "my-0 mb-6" : "my-8"}`}
+        />
         <div className="flex items-center gap-4">
           <div
             className={`rounded-full bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 ${
@@ -278,7 +284,16 @@ export default function TestimonialsCarousel() {
             aria-label="Previous review"
             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 active:text-white active:border-white/50 transition-all"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M19 12H5m7-7-7 7 7 7" />
             </svg>
           </button>
@@ -303,7 +318,16 @@ export default function TestimonialsCarousel() {
             aria-label="Next review"
             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 active:text-white active:border-white/50 transition-all"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M5 12h14m-7-7 7 7-7 7" />
             </svg>
           </button>

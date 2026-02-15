@@ -32,9 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${bebasNeue.variable} ${inter.variable} antialiased`}
-      >
+      <body className={`${bebasNeue.variable} ${inter.variable} antialiased`}>
         {children}
 
         {/* Floating WhatsApp Button */}
