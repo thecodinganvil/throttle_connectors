@@ -11,9 +11,10 @@ const PROGRAMS = [
     city: "BANGALORE",
     slug: "bangalore",
     title: "KARTING & FORMULA CAR ACADEMY",
-    status: "3-Day Program",
+    status: "2-4 April",
     location: "Red Riders Go Karting, Bangalore",
     image: "/assets/bangalore.jpeg",
+    heading: "BANGALORE ACADEMY",
   },
   {
     city: "HYDERABAD",
@@ -27,9 +28,10 @@ const PROGRAMS = [
     city: "COIMBATORE",
     slug: "coimbatore",
     title: "FORMULA CAR ACADEMY",
-    status: "Now Open",
+    status: "16-17 APRIL",
     location: "Kari Motor Speedway, Coimbatore",
     image: "/assets/coimbatore.jpeg",
+    heading: "COIMBATORE FORMULA CAR ACADEMY",
   },
   {
     city: "AHMEDABAD",
@@ -143,19 +145,35 @@ export default function AcademyPage() {
   /* ── Social icon SVGs ── */
   const SocialIcons = ({ className = "" }: { className?: string }) => (
     <div className={`flex items-center gap-4 sm:gap-5 ${className}`}>
-      <a href="#" aria-label="Twitter / X" className="social-icon">
+      <a
+        href="https://www.instagram.com/throttleconnectors?igsh=c3N4NDc4aHZmYWlr"
+        aria-label="Instagram"
+        className="social-icon"
+      >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-          <path d="M4 20l6.768 -6.768m2.46 -2.46L20 4" />
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.5" cy="6.5" r="1" />
         </svg>
       </a>
-      <a href="mailto:throttleconnectors@gmail.com" aria-label="Email" className="social-icon">
+      <a
+        href="https://www.linkedin.com/in/krishna-prajapati-a3aa5a315?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+        aria-label="LinkedIn"
+        className="social-icon"
+      >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="4" width="20" height="16" rx="2" />
-          <path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          <rect x="2" y="3" width="20" height="18" rx="2" />
+          <line x1="7" y1="8" x2="7" y2="17" />
+          <line x1="11" y1="11" x2="11" y2="17" />
+          <path d="M11 11a3 3 0 0 1 6 0v6" />
+          <circle cx="7" cy="6" r="1" />
         </svg>
       </a>
-      <a href="#" aria-label="Facebook" className="social-icon">
+      <a
+        href="https://www.facebook.com/share/1FvF4bWYsy/"
+        aria-label="Facebook"
+        className="social-icon"
+      >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
         </svg>
@@ -193,16 +211,14 @@ export default function AcademyPage() {
             </div>
           </div>
 
-          <div className="hidden md:block relative h-full w-full overflow-hidden p-24 lg:p-32 xl:p-48">
-            <div className="w-full h-full relative rounded-2xl overflow-hidden group/menu-img">
-              <Image
-                src="/assets/academy_page1.jpeg"
-                alt="Racing"
-                fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover/menu-img:scale-100"
-              />
-              <div className="absolute inset-0 bg-black/20" />
-            </div>
+          <div className="hidden md:flex items-center justify-center relative h-full w-full p-16 lg:p-24 xl:p-32">
+            <Image
+              src="/assets/throttle.png"
+              alt="Throttle Connectors logo"
+              width={320}
+              height={320}
+              className="h-[200px] w-[200px] lg:h-[240px] lg:w-[240px] xl:h-[280px] xl:w-[280px] object-contain"
+            />
           </div>
         </div>
       </div>
@@ -219,10 +235,10 @@ export default function AcademyPage() {
               <Image
                 src="/assets/throttle.png"
                 alt="Throttle Connectors logo"
-                width={100}
-                height={100}
+                width={130}
+                height={130}
                 priority
-                className="h-[65px] w-[65px] object-contain sm:h-[80px] sm:w-[80px] md:h-[100px] md:w-[100px] transition-all duration-500"
+                className="h-[80px] w-[80px] object-contain sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] transition-all duration-500"
               />
             </Link>
           </div>
@@ -295,7 +311,7 @@ export default function AcademyPage() {
                     <div className="flex items-center justify-between p-5 sm:p-6 bg-[#222222] rounded-[1.5rem] group-hover:bg-cyan transition-colors duration-500">
                       <div className="flex flex-col gap-1">
                         <h3 className="font-[family-name:var(--font-bebas)] text-cyan group-hover:text-black text-xl sm:text-2xl md:text-3xl tracking-wide transition-colors duration-500">
-                          {program.city} ACADEMY
+                          {program.heading ?? `${program.city} ACADEMY`}
                         </h3>
                         <p className="font-[family-name:var(--font-bebas)] text-cyan/50 group-hover:text-black/50 text-base sm:text-lg md:text-xl tracking-wide flex items-center gap-1.5 transition-colors duration-500">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
@@ -357,9 +373,9 @@ export default function AcademyPage() {
                 <span className="text-white/60 text-sm tracking-wider">Socials</span>
               </div>
               <div className="flex flex-col gap-3 mt-2">
-                <a href="#" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">X. Twitter</a>
-                <a href="#" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Instagram</a>
-                <a href="#" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">LinkedIn</a>
+                <a href="https://www.instagram.com/throttleconnectors?igsh=c3N4NDc4aHZmYWlr" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Instagram</a>
+                <a href="https://www.linkedin.com/in/krishna-prajapati-a3aa5a315?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">LinkedIn</a>
+                <a href="https://www.facebook.com/share/1FvF4bWYsy/" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Facebook</a>
               </div>
             </div>
 
@@ -375,7 +391,7 @@ export default function AcademyPage() {
               <div className="flex flex-col gap-3 mt-2">
                 <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">+91 8467042523</span>
                 <span className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all">throttleconnectors@gmail.com</span>
-                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">Uttar Pradesh</span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">Office - Kanpur, Uttar Pradesh</span>
               </div>
             </div>
           </div>

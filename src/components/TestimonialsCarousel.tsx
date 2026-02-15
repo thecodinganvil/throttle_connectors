@@ -6,34 +6,50 @@ const TESTIMONIALS = [
   {
     num: "01",
     quote:
-      "Throttle Connectors gave me the platform I had been dreaming of. The coaching is world-class and the team genuinely cares about every racer's growth.",
-    name: "Christopher L. Morgan",
-    role: "Formula Racer",
-    initials: "CM",
+      "Throttle Connectors have been investing hugely in bringing more drivers into motorsport through affordable programs. Spreading awareness about the pathways to success in motorsport along with training newer generations of drivers through more scientific and data driven methods. As a coach, I am very happy with the progress we have seen in our students and the platform at which we are able to bring them up to.",
+    name: "Mr Vineet Mane",
+    role: "Coach & Driver partner of Throttle Connectors",
+    initials: "VM",
   },
   {
     num: "02",
     quote:
-      "From my very first session, I knew this was different. The structured programs and mentorship helped me shave seconds off my lap times within weeks.",
-    name: "Arjun Patel",
-    role: "Karting Champion",
-    initials: "AP",
+      "The academy program significantly improved my driving style, especially my cornering technique and racing lines. I learned many valuable skills that I will continue to apply in my racing journey.",
+    name: "Sadatul",
+    role: "Participant, Bangalore Academy",
+    initials: "S",
   },
   {
     num: "03",
     quote:
-      "The academy completely transformed my approach to racing. I went from a hobbyist to competing in national-level karting events. This is the real deal.",
-    name: "Sneha Reddy",
-    role: "National Competitor",
-    initials: "SR",
+      "This is the best opportunity I've ever got. Crazy people, best coach I've ever had, learned a lot.",
+    name: "Vikram",
+    role: "Participant of Bangalore Academy",
+    initials: "V",
   },
   {
     num: "04",
     quote:
-      "What sets them apart is their holistic approach — it's not just driving fast, it's understanding the science of racing. Best investment I've ever made.",
-    name: "Rohan Kapoor",
-    role: "Motorsport Engineer",
-    initials: "RK",
+      "I have been part of other training programs that were bigger organizations compared to this one, but they were unable to provide a structured schedule like this academy.",
+    name: "Pranav",
+    role: "Participant, Bangalore Karting Academy",
+    initials: "P",
+  },
+  {
+    num: "05",
+    quote:
+      "It was amazing training. The amount of knowledge we gained in these two days was incredible. It was a very good event with a fantastic coach.",
+    name: "Avishek",
+    role: "Participant of Bangalore Academy",
+    initials: "A",
+  },
+  {
+    num: "06",
+    quote:
+      "I'm very happy with the affordability of the program and the effort put into teaching more about pathways to a motorsport career, rather than focusing only on lap times or performance.",
+    name: "Madhavkrishna B",
+    role: "Participant of Bangalore Karting Academy",
+    initials: "MB",
   },
 ];
 

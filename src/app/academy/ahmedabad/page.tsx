@@ -50,13 +50,25 @@ export default function AhmedabadAcademy() {
 
   const SocialIcons = ({ className = "" }: { className?: string }) => (
     <div className={`flex items-center gap-4 sm:gap-5 ${className}`}>
-      <a href="#" aria-label="Twitter / X" className="social-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46L20 4" /></svg>
+      <a
+        href="https://www.instagram.com/throttleconnectors?igsh=c3N4NDc4aHZmYWlr"
+        aria-label="Instagram"
+        className="social-icon"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg>
       </a>
-      <a href="mailto:throttleconnectors@gmail.com" aria-label="Email" className="social-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+      <a
+        href="https://www.linkedin.com/in/krishna-prajapati-a3aa5a315?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+        aria-label="LinkedIn"
+        className="social-icon"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="18" rx="2" /><line x1="7" y1="8" x2="7" y2="17" /><line x1="11" y1="11" x2="11" y2="17" /><path d="M11 11a3 3 0 0 1 6 0v6" /><circle cx="7" cy="6" r="1" /></svg>
       </a>
-      <a href="#" aria-label="Facebook" className="social-icon">
+      <a
+        href="https://www.facebook.com/share/1FvF4bWYsy/"
+        aria-label="Facebook"
+        className="social-icon"
+      >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
       </a>
     </div>
@@ -76,11 +88,14 @@ export default function AhmedabadAcademy() {
             <div ref={dividerRef} className="menu-divider-large opacity-20" />
             <div ref={socialsRef} className="menu-socials"><SocialIcons /></div>
           </div>
-          <div className="hidden md:block relative h-full w-full overflow-hidden p-24 lg:p-32 xl:p-48">
-            <div className="w-full h-full relative rounded-2xl overflow-hidden group/menu-img">
-              <Image src="/assets/ahmedabad.jpeg" alt="Racing" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover/menu-img:scale-100" />
-              <div className="absolute inset-0 bg-black/20" />
-            </div>
+          <div className="hidden md:flex items-center justify-center relative h-full w-full p-16 lg:p-24 xl:p-32">
+            <Image
+              src="/assets/throttle.png"
+              alt="Throttle Connectors logo"
+              width={320}
+              height={320}
+              className="h-[200px] w-[200px] lg:h-[240px] lg:w-[240px] xl:h-[280px] xl:w-[280px] object-contain"
+            />
           </div>
         </div>
       </div>
@@ -89,7 +104,7 @@ export default function AhmedabadAcademy() {
       <header className={`fixed top-0 left-0 w-full z-[80] transition-all duration-500 px-5 py-2 sm:px-8 sm:py-3 md:px-12 md:py-3 ${scrolled && !menuOpen ? "bg-black/60 backdrop-blur-xl" : "bg-transparent"}`}>
         <div className="flex items-center justify-between w-full">
           <div className="flex-shrink-0">
-            <Link href="/"><Image src="/assets/throttle.png" alt="Throttle Connectors logo" width={100} height={100} priority className="h-[65px] w-[65px] object-contain sm:h-[80px] sm:w-[80px] md:h-[100px] md:w-[100px] transition-all duration-500" /></Link>
+            <Link href="/"><Image src="/assets/throttle.png" alt="Throttle Connectors logo" width={130} height={130} priority className="h-[80px] w-[80px] object-contain sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] transition-all duration-500" /></Link>
           </div>
           <nav className={`hidden items-center gap-4 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             <Link href="/#about" className="nav-pill">About Us</Link>
@@ -200,9 +215,9 @@ export default function AhmedabadAcademy() {
             <div className="flex flex-col gap-5">
               <div className="flex items-center gap-2"><span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-cyan" /><span className="w-1.5 h-1.5 rounded-full bg-cyan" /></span><span className="text-white/60 text-sm tracking-wider">Socials</span></div>
               <div className="flex flex-col gap-3 mt-2">
-                <a href="#" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">X. Twitter</a>
-                <a href="#" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Instagram</a>
-                <a href="#" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">LinkedIn</a>
+                <a href="https://www.instagram.com/throttleconnectors?igsh=c3N4NDc4aHZmYWlr" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Instagram</a>
+                <a href="https://www.linkedin.com/in/krishna-prajapati-a3aa5a315?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">LinkedIn</a>
+                <a href="https://www.facebook.com/share/1FvF4bWYsy/" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Facebook</a>
               </div>
             </div>
             <div className="flex flex-col gap-5">
@@ -210,7 +225,7 @@ export default function AhmedabadAcademy() {
               <div className="flex flex-col gap-3 mt-2">
                 <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">+91 8467042523</span>
                 <span className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all">throttleconnectors@gmail.com</span>
-                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">Uttar Pradesh</span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">Office - Kanpur, Uttar Pradesh</span>
               </div>
             </div>
           </div>
