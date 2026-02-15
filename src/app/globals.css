@@ -196,6 +196,10 @@ body.menu-open {
   color: #111;
   border-color: rgba(255, 255, 255, 0.92);
 }
+.nav-pill-active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+}
 
 /* ===== Heading Glow ===== */
 .throttle-title {
