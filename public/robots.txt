@@ -1,0 +1,23 @@
+# Throttle Connectors SEO Robots Configuration
+User-agent: *
+Allow: /
+
+# Disallow specific paths
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://throttleconnectors.in/sitemap.xml
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

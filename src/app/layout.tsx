@@ -15,8 +15,71 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Throttle Connectors",
-  description: "Throttle Connectors — Since 2012",
+  title:
+    "Throttle Connectors - Learn High-Performance Driving & Business Skills",
+  description:
+    "Master the art of high-performance driving with Throttle Connectors. Expert training programs in Ahmedabad, Bangalore, Coimbatore, and Hyderabad. Transform your skills today.",
+  keywords:
+    "high-performance driving, performance training, driving academy, business skills, professional courses",
+  authors: [{ name: "Throttle Connectors" }],
+  creator: "Throttle Connectors",
+  publisher: "Throttle Connectors",
+  formatDetection: {
+    email: false,
+    telephone: true,
+    address: true,
+  },
+  metadataBase: new URL("https://throttleconnectors.in"),
+  alternates: {
+    canonical: "https://throttleconnectors.in",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://throttleconnectors.in",
+    title:
+      "Throttle Connectors - Learn High-Performance Driving & Business Skills",
+    description:
+      "Master the art of high-performance driving with Throttle Connectors. Expert training programs in Ahmedabad, Bangalore, Coimbatore, and Hyderabad. Transform your skills today.",
+    siteName: "Throttle Connectors",
+    images: [
+      {
+        url: "https://throttleconnectors.in/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Throttle Connectors - High-Performance Driving Academy",
+        type: "image/png",
+      },
+      {
+        url: "https://throttleconnectors.in/assets/og-image-square.png",
+        width: 800,
+        height: 800,
+        alt: "Throttle Connectors Logo",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Throttle Connectors - Learn High-Performance Driving",
+    description:
+      "Master high-performance driving with expert training programs across India.",
+    images: ["https://throttleconnectors.in/assets/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  verification: {
+    google: "your-google-site-verification-code",
+  },
 };
 
 export const viewport = {
@@ -34,6 +97,100 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* JSON-LD Structured Data for Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Throttle Connectors",
+              url: "https://throttleconnectors.in",
+              logo: "https://throttleconnectors.in/assets/throttle.png",
+              description:
+                "Master the art of high-performance driving with Throttle Connectors. Expert training programs across India.",
+              sameAs: [
+                "https://www.facebook.com/throttleconnectors",
+                "https://www.instagram.com/throttleconnectors",
+                "https://www.linkedin.com/company/throttleconnectors",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "Customer Service",
+                telephone: "+91-8467-042-523",
+              },
+              areaServed: [
+                {
+                  "@type": "City",
+                  name: "Ahmedabad",
+                },
+                {
+                  "@type": "City",
+                  name: "Bangalore",
+                },
+                {
+                  "@type": "City",
+                  name: "Coimbatore",
+                },
+                {
+                  "@type": "City",
+                  name: "Hyderabad",
+                },
+              ],
+              foundingDate: "2024",
+            }),
+          }}
+        />
+        {/* JSON-LD Structured Data for Educational Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EducationalOrganization",
+              name: "Throttle Connectors",
+              url: "https://throttleconnectors.in",
+              description:
+                "Professional training academy for high-performance driving and business skills",
+              logo: "https://throttleconnectors.in/assets/throttle.png",
+              image: "https://throttleconnectors.in/assets/og-image.png",
+              priceRange: "$$",
+              address: [
+                {
+                  "@type": "PostalAddress",
+                  addressCountry: "IN",
+                  addressRegion: "Gujarat",
+                  addressLocality: "Ahmedabad",
+                },
+                {
+                  "@type": "PostalAddress",
+                  addressCountry: "IN",
+                  addressRegion: "Karnataka",
+                  addressLocality: "Bangalore",
+                },
+                {
+                  "@type": "PostalAddress",
+                  addressCountry: "IN",
+                  addressRegion: "Tamil Nadu",
+                  addressLocality: "Coimbatore",
+                },
+                {
+                  "@type": "PostalAddress",
+                  addressCountry: "IN",
+                  addressRegion: "Telangana",
+                  addressLocality: "Hyderabad",
+                },
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "Admissions",
+                telephone: "+91-8467-042-523",
+              },
+            }),
+          }}
+        />
+      </head>
       <body className={`${bebasNeue.variable} ${inter.variable} antialiased`}>
         {children}
 
