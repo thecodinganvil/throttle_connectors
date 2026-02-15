@@ -752,12 +752,12 @@ export default function CoimbatoreAcademy() {
                 </span>
               </div>
               <div className="flex flex-col gap-3 mt-2">
-                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">
+                <a href="tel:+918467042523" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">
                   +91 8467042523
-                </span>
-                <span className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all">
+                </a>
+                <a href="mailto:throttleconnectors@gmail.com" className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all hover:opacity-50 transition-opacity">
                   throttleconnectors@gmail.com
-                </span>
+                </a>
                 <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">
                   Office - Kanpur, Uttar Pradesh
                 </span>
