@@ -77,21 +77,21 @@ export default function AcademyPage() {
     tl.fromTo(
       headingRef.current,
       { y: 80, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.9 }
+      { y: 0, opacity: 1, duration: 0.9 },
     );
 
     tl.fromTo(
       hrRef.current,
       { scaleX: 0, transformOrigin: "left center" },
       { scaleX: 1, duration: 0.7 },
-      "-=0.4"
+      "-=0.4",
     );
 
     tl.fromTo(
       cardsRef.current.filter(Boolean),
       { y: 60, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.7, stagger: 0.12 },
-      "-=0.3"
+      "-=0.3",
     );
   }, []);
 
@@ -115,19 +115,25 @@ export default function AcademyPage() {
           stagger: 0.08,
           ease: "power3.out",
           delay: 0.15,
-        }
+        },
       );
 
       gsap.fromTo(
         dividerRef.current,
         { scaleX: 0, opacity: 0 },
-        { scaleX: 1, opacity: 1, duration: 0.5, delay: 0.4, ease: "power2.out" }
+        {
+          scaleX: 1,
+          opacity: 1,
+          duration: 0.5,
+          delay: 0.4,
+          ease: "power2.out",
+        },
       );
 
       gsap.fromTo(
         socialsRef.current,
         { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, delay: 0.5, ease: "power3.out" }
+        { y: 0, opacity: 1, duration: 0.5, delay: 0.5, ease: "power3.out" },
       );
     } else {
       document.body.classList.remove("menu-open");
@@ -150,7 +156,16 @@ export default function AcademyPage() {
         aria-label="Instagram"
         className="social-icon"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <rect x="3" y="3" width="18" height="18" rx="5" />
           <circle cx="12" cy="12" r="4" />
           <circle cx="17.5" cy="6.5" r="1" />
@@ -161,7 +176,16 @@ export default function AcademyPage() {
         aria-label="LinkedIn"
         className="social-icon"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <rect x="2" y="3" width="20" height="18" rx="2" />
           <line x1="7" y1="8" x2="7" y2="17" />
           <line x1="11" y1="11" x2="11" y2="17" />
@@ -174,7 +198,16 @@ export default function AcademyPage() {
         aria-label="Facebook"
         className="social-icon"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
         </svg>
       </a>
@@ -194,7 +227,9 @@ export default function AcademyPage() {
               {NAV_LINKS.map((link, i) => (
                 <a
                   key={link.href}
-                  ref={(el) => { linkRefs.current[i] = el; }}
+                  ref={(el) => {
+                    linkRefs.current[i] = el;
+                  }}
                   href={link.href}
                   className="menu-link-large"
                   onClick={() => setMenuOpen(false)}
@@ -226,7 +261,9 @@ export default function AcademyPage() {
       {/* ═══════ FIXED HEADER ═══════ */}
       <header
         className={`fixed top-0 left-0 w-full z-[80] transition-all duration-500 px-5 py-2 sm:px-8 sm:py-3 md:px-12 md:py-3 ${
-          scrolled && !menuOpen ? "bg-black/60 backdrop-blur-xl" : "bg-transparent"
+          scrolled && !menuOpen
+            ? "bg-black/60 backdrop-blur-xl"
+            : "bg-transparent"
         }`}
       >
         <div className="flex items-center justify-between w-full">
@@ -244,11 +281,17 @@ export default function AcademyPage() {
           </div>
 
           {/* Centered nav pills */}
-          <nav className={`hidden items-center gap-4 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${
-            menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}>
-            <Link href="/#about" className="nav-pill">About Us</Link>
-            <Link href="/academy" className="nav-pill nav-pill-active">Academy</Link>
+          <nav
+            className={`hidden items-center gap-4 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${
+              menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+          >
+            <Link href="/#about" className="nav-pill">
+              About Us
+            </Link>
+            <Link href="/academy" className="nav-pill nav-pill-active">
+              Academy
+            </Link>
           </nav>
 
           {/* Hamburger */}
@@ -277,7 +320,9 @@ export default function AcademyPage() {
           ref={headingRef}
           className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.95] tracking-tight mb-8 sm:mb-12"
         >
-          ACADEMY<br />PROGRAMS
+          ACADEMY
+          <br />
+          PROGRAMS
         </h1>
 
         {/* ── Divider ── */}
@@ -291,7 +336,9 @@ export default function AcademyPage() {
           {PROGRAMS.map((program, idx) => (
             <div
               key={program.slug}
-              ref={(el) => { cardsRef.current[idx] = el; }}
+              ref={(el) => {
+                cardsRef.current[idx] = el;
+              }}
             >
               <Link href={`/academy/${program.slug}`} className="block">
                 <article className="w-full group bg-[#0e0e0e] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.8)] hover:border-cyan/30 transition-all duration-500">
@@ -314,7 +361,17 @@ export default function AcademyPage() {
                           {program.heading ?? `${program.city} ACADEMY`}
                         </h3>
                         <p className="font-[family-name:var(--font-bebas)] text-cyan/50 group-hover:text-black/50 text-base sm:text-lg md:text-xl tracking-wide flex items-center gap-1.5 transition-colors duration-500">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="flex-shrink-0"
+                          >
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
                           </svg>
@@ -325,7 +382,17 @@ export default function AcademyPage() {
                         </p>
                       </div>
                       <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#333333] group-hover:bg-black flex items-center justify-center transition-all duration-500">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-cyan transition-colors duration-500">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="group-hover:stroke-cyan transition-colors duration-500"
+                        >
                           <path d="M5 12h14m-7-7 7 7-7 7" />
                         </svg>
                       </div>
@@ -343,7 +410,13 @@ export default function AcademyPage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 sm:gap-16 lg:gap-24 mb-12 sm:mb-20">
           {/* Left: Logo */}
           <div className="flex flex-col gap-4 justify-center">
-            <Image src="/assets/throttle.png" alt="Throttle Connectors" width={120} height={120} className="h-[80px] w-[80px] sm:h-[100px] sm:w-[100px] md:h-[120px] md:w-[120px] object-contain" />
+            <Image
+              src="/assets/throttle.png"
+              alt="Throttle Connectors"
+              width={120}
+              height={120}
+              className="h-[80px] w-[80px] sm:h-[100px] sm:w-[100px] md:h-[120px] md:w-[120px] object-contain"
+            />
           </div>
 
           {/* Right: Three columns */}
@@ -355,11 +428,23 @@ export default function AcademyPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                 </span>
-                <span className="text-white/60 text-sm tracking-wider">Navigation</span>
+                <span className="text-white/60 text-sm tracking-wider">
+                  Navigation
+                </span>
               </div>
               <div className="flex flex-col gap-3 mt-2">
-                <Link href="/#about" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">About Us</Link>
-                <Link href="/academy" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Academy</Link>
+                <Link
+                  href="/#about"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="/academy"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  Academy
+                </Link>
               </div>
             </div>
 
@@ -370,12 +455,29 @@ export default function AcademyPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                 </span>
-                <span className="text-white/60 text-sm tracking-wider">Socials</span>
+                <span className="text-white/60 text-sm tracking-wider">
+                  Socials
+                </span>
               </div>
               <div className="flex flex-col gap-3 mt-2">
-                <a href="https://www.instagram.com/throttleconnectors?igsh=c3N4NDc4aHZmYWlr" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Instagram</a>
-                <a href="https://www.linkedin.com/in/krishna-prajapati-a3aa5a315?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">LinkedIn</a>
-                <a href="https://www.facebook.com/share/1FvF4bWYsy/" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Facebook</a>
+                <a
+                  href="https://www.instagram.com/throttleconnectors?igsh=c3N4NDc4aHZmYWlr"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/krishna-prajapati-a3aa5a315?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://www.facebook.com/share/1FvF4bWYsy/"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  Facebook
+                </a>
               </div>
             </div>
 
@@ -386,20 +488,32 @@ export default function AcademyPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                 </span>
-                <span className="text-white/60 text-sm tracking-wider">Get in touch</span>
+                <span className="text-white/60 text-sm tracking-wider">
+                  Get in touch
+                </span>
               </div>
               <div className="flex flex-col gap-3 mt-2">
-                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">+91 8467042523</span>
-                <span className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all">throttleconnectors@gmail.com</span>
-                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">Office - Kanpur, Uttar Pradesh</span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">
+                  +91 8467042523
+                </span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all">
+                  throttleconnectors@gmail.com
+                </span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">
+                  Office - Kanpur, Uttar Pradesh
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom copyright */}
-        <div className="border-t border-white/10 pt-8 text-center">
-          <p className="text-white/40 text-sm tracking-wide">
+        <div className="border-t border-white/10 pt-8 pb-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="font-[family-name:var(--font-bebas)] text-white/40 text-base sm:text-lg tracking-wider">
+            Developed & Designed by <span className="text-cyan">Osman</span> and{" "}
+            <span className="text-cyan">Arbaaz</span>
+          </p>
+          <p className="font-[family-name:var(--font-bebas)] text-white/30 text-base sm:text-lg tracking-wider">
             ©2026 Copyright All Rights Reserved
           </p>
         </div>

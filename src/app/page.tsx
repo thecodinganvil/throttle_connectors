@@ -51,21 +51,27 @@ export default function Home() {
           stagger: 0.08,
           ease: "power3.out",
           delay: 0.15,
-        }
+        },
       );
 
       // Animate divider
       gsap.fromTo(
         dividerRef.current,
         { scaleX: 0, opacity: 0 },
-        { scaleX: 1, opacity: 1, duration: 0.5, delay: 0.4, ease: "power2.out" }
+        {
+          scaleX: 1,
+          opacity: 1,
+          duration: 0.5,
+          delay: 0.4,
+          ease: "power2.out",
+        },
       );
 
       // Animate socials
       gsap.fromTo(
         socialsRef.current,
         { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, delay: 0.5, ease: "power3.out" }
+        { y: 0, opacity: 1, duration: 0.5, delay: 0.5, ease: "power3.out" },
       );
     } else {
       document.body.classList.remove("menu-open");
@@ -81,8 +87,6 @@ export default function Home() {
     };
   }, [menuOpen]);
 
-
-
   /* ── Social icon SVGs (shared between footer & menu) ── */
   const SocialIcons = ({ className = "" }: { className?: string }) => (
     <div className={`flex items-center gap-4 sm:gap-5 ${className}`}>
@@ -91,7 +95,16 @@ export default function Home() {
         aria-label="Instagram"
         className="social-icon"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <rect x="3" y="3" width="18" height="18" rx="5" />
           <circle cx="12" cy="12" r="4" />
           <circle cx="17.5" cy="6.5" r="1" />
@@ -102,7 +115,16 @@ export default function Home() {
         aria-label="LinkedIn"
         className="social-icon"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <rect x="2" y="3" width="20" height="18" rx="2" />
           <line x1="7" y1="8" x2="7" y2="17" />
           <line x1="11" y1="11" x2="11" y2="17" />
@@ -115,7 +137,16 @@ export default function Home() {
         aria-label="Facebook"
         className="social-icon"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
         </svg>
       </a>
@@ -136,7 +167,9 @@ export default function Home() {
               {NAV_LINKS.map((link, i) => (
                 <a
                   key={link.href}
-                  ref={(el) => { linkRefs.current[i] = el; }}
+                  ref={(el) => {
+                    linkRefs.current[i] = el;
+                  }}
                   href={link.href}
                   className="menu-link-large"
                   onClick={() => setMenuOpen(false)}
@@ -167,9 +200,11 @@ export default function Home() {
       </div>
 
       {/* ═══════ FIXED HEADER ═══════ */}
-      <header 
+      <header
         className={`fixed top-0 left-0 w-full z-[80] transition-all duration-500 px-5 py-2 sm:px-8 sm:py-3 md:px-12 md:py-3 ${
-          scrolled && !menuOpen ? "bg-black/60 backdrop-blur-xl" : "bg-transparent"
+          scrolled && !menuOpen
+            ? "bg-black/60 backdrop-blur-xl"
+            : "bg-transparent"
         }`}
       >
         <div className="flex items-center justify-between w-full">
@@ -187,11 +222,17 @@ export default function Home() {
           </div>
 
           {/* Centered nav pills (Hidden when menu is open) */}
-          <nav className={`hidden items-center gap-4 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${
-            menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}>
-            <a href="#about" className="nav-pill">About Us</a>
-            <Link href="/academy" className="nav-pill">Academy</Link>
+          <nav
+            className={`hidden items-center gap-4 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${
+              menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+          >
+            <a href="#about" className="nav-pill">
+              About Us
+            </a>
+            <Link href="/academy" className="nav-pill">
+              Academy
+            </Link>
           </nav>
 
           {/* Hamburger Button (Aligned with nav) */}
@@ -214,9 +255,7 @@ export default function Home() {
       </header>
 
       {/* ═══════ HERO SECTION ═══════ */}
-      <section
-        className="relative flex min-h-screen w-full flex-col overflow-hidden bg-[#0a0a0a]"
-      >
+      <section className="relative flex min-h-screen w-full flex-col overflow-hidden bg-[#0a0a0a]">
         {/* ── Video Background ── */}
         <div className="absolute inset-0 z-0">
           <video
@@ -239,9 +278,7 @@ export default function Home() {
           <h1 className="throttle-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
             THROTTLE
           </h1>
-          <span
-            className="connectors-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
-          >
+          <span className="connectors-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
             CONNECTORS
           </span>
         </div>
@@ -253,7 +290,10 @@ export default function Home() {
       </section>
 
       {/* ═══════ ABOUT US SECTION ═══════ */}
-      <section id="about" className="relative w-full bg-[#0a0a0a] px-5 py-20 sm:px-8 md:px-12 lg:px-20 md:py-28">
+      <section
+        id="about"
+        className="relative w-full bg-[#0a0a0a] px-5 py-20 sm:px-8 md:px-12 lg:px-20 md:py-28"
+      >
         <div className="flex flex-col md:flex-row md:items-start gap-8 sm:gap-12 md:gap-20 mb-20 sm:mb-36 md:mb-56 lg:mb-72">
           <div className="flex items-center gap-3 flex-shrink-0 md:pt-4">
             <span className="flex items-center gap-1.5">
@@ -272,10 +312,10 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-10 md:gap-12 lg:gap-20 items-start">
           <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl group bg-white/[0.04] border border-white/[0.08]">
-            <Image 
-              src="/assets/academy_page2.jpeg" 
-              alt="Throttle Connectors Academy Students" 
-              fill 
+            <Image
+              src="/assets/academy_page2.jpeg"
+              alt="Throttle Connectors Academy Students"
+              fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 pointer-events-none" />
@@ -283,18 +323,18 @@ export default function Home() {
 
           <div className="flex flex-col justify-center md:pt-16 lg:pt-24 gap-6">
             <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-md">
-              Throttle Connectors is a motorsport company built to turn
-              racing dreams into reality. Our mission is simple: to make
-              motorsport affordable and accessible for everyone who has
-              the passion to race.
+              Throttle Connectors is a motorsport company built to turn racing
+              dreams into reality. Our mission is simple: to make motorsport
+              affordable and accessible for everyone who has the passion to
+              race.
             </p>
 
             <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-md">
-              From academy programs to driver management and
-              sponsorship support, we help racers grow step by step and
-              reach the next level in their motorsport journey. We don&apos;t just
-              train drivers. We build careers. Throttle Connectors is
-              here to support your racing dream.
+              From academy programs to driver management and sponsorship
+              support, we help racers grow step by step and reach the next level
+              in their motorsport journey. We don&apos;t just train drivers. We
+              build careers. Throttle Connectors is here to support your racing
+              dream.
             </p>
 
             <div className="flex items-end justify-between gap-6 mt-6">
@@ -303,7 +343,16 @@ export default function Home() {
                   Let&apos;s Get Started
                 </span>
                 <span className="cta-icon-wrapper">
-                  <svg className="cta-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    className="cta-icon-svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <line x1="12" y1="5" x2="12" y2="19" />
                     <line x1="5" y1="12" x2="19" y2="12" />
                   </svg>
@@ -324,7 +373,10 @@ export default function Home() {
       </section>
 
       {/* ═══════ ACADEMY PROGRAMS SECTION ═══════ */}
-      <section id="academy" className="relative w-full bg-[#0a0a0a] px-4 py-16 sm:px-8 sm:py-24 md:px-12 md:py-40 flex flex-col items-center justify-center">
+      <section
+        id="academy"
+        className="relative w-full bg-[#0a0a0a] px-4 py-16 sm:px-8 sm:py-24 md:px-12 md:py-40 flex flex-col items-center justify-center"
+      >
         <h2 className="font-[family-name:var(--font-bebas)] text-cyan text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl leading-none tracking-tight text-left w-full max-w-6xl mb-12 sm:mb-20 md:mb-32">
           <div>OUR</div>
           <div>UPCOMING</div>
@@ -337,54 +389,101 @@ export default function Home() {
         {/* Academy Cards Grid - 2x2 */}
         <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {[
-            { city: "BANGALORE", slug: "bangalore", title: "KARTING & FORMULA CAR ACADEMY", status: "2-4 April", location: "Red Riders Go Karting, Bangalore", image: "/assets/bangalore.jpeg", heading: "BANGALORE ACADEMY" },
-            { city: "HYDERABAD", slug: "hyderabad", title: "KARTING ACADEMY", status: "30–31 March", location: "Tspeedway, Hyderabad", image: "/assets/hyderabad.jpeg" },
-            { city: "COIMBATORE", slug: "coimbatore", title: "FORMULA CAR ACADEMY", status: "16-17 APRIL", location: "Kari Motor Speedway, Coimbatore", image: "/assets/coimbatore.jpeg", heading: "COIMBATORE FORMULA CAR ACADEMY" },
-            { city: "AHMEDABAD", slug: "ahmedabad", title: "KARTING ACADEMY", status: "Launching Soon", location: "Venue TBA", image: "/assets/ahmedabad.jpeg" }
+            {
+              city: "BANGALORE",
+              slug: "bangalore",
+              title: "KARTING & FORMULA CAR ACADEMY",
+              status: "2-4 April",
+              location: "Red Riders Go Karting, Bangalore",
+              image: "/assets/bangalore.jpeg",
+              heading: "BANGALORE ACADEMY",
+            },
+            {
+              city: "HYDERABAD",
+              slug: "hyderabad",
+              title: "KARTING ACADEMY",
+              status: "30–31 March",
+              location: "Tspeedway, Hyderabad",
+              image: "/assets/hyderabad.jpeg",
+            },
+            {
+              city: "COIMBATORE",
+              slug: "coimbatore",
+              title: "FORMULA CAR ACADEMY",
+              status: "16-17 APRIL",
+              location: "Kari Motor Speedway, Coimbatore",
+              image: "/assets/coimbatore.jpeg",
+              heading: "COIMBATORE FORMULA CAR ACADEMY",
+            },
+            {
+              city: "AHMEDABAD",
+              slug: "ahmedabad",
+              title: "KARTING ACADEMY",
+              status: "Launching Soon",
+              location: "Venue TBA",
+              image: "/assets/ahmedabad.jpeg",
+            },
           ].map((program, idx) => (
-            <div
-              key={idx}
-              className="w-full"
-            >
+            <div key={idx} className="w-full">
               <Link href={`/academy/${program.slug}`}>
-              <article className="w-full group bg-[#0e0e0e] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.8)] hover:border-cyan/30 transition-all duration-500">
-                {/* Banner Image */}
-                <div className="relative w-full aspect-[16/9] bg-[#1a1a1a] overflow-hidden">
-                  <Image
-                    src={program.image}
-                    alt={`${program.city} Academy`}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                </div>
+                <article className="w-full group bg-[#0e0e0e] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.8)] hover:border-cyan/30 transition-all duration-500">
+                  {/* Banner Image */}
+                  <div className="relative w-full aspect-[16/9] bg-[#1a1a1a] overflow-hidden">
+                    <Image
+                      src={program.image}
+                      alt={`${program.city} Academy`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  </div>
 
-                {/* Content Section */}
-                <div className="p-3 sm:p-4 bg-[#0e0e0e]">
-                  <div className="flex items-center justify-between p-5 sm:p-6 bg-[#222222] rounded-[1.5rem] group-hover:bg-cyan transition-colors duration-500">
-                    <div className="flex flex-col gap-1">
-                      <h3 className="font-[family-name:var(--font-bebas)] text-cyan group-hover:text-black text-xl sm:text-2xl md:text-3xl tracking-wide transition-colors duration-500">
-                        {program.heading ?? `${program.city} ACADEMY`}
-                      </h3>
-                      <p className="font-[family-name:var(--font-bebas)] text-cyan/50 group-hover:text-black/50 text-base sm:text-lg md:text-xl tracking-wide flex items-center gap-1.5 transition-colors duration-500">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                          <circle cx="12" cy="10" r="3" />
+                  {/* Content Section */}
+                  <div className="p-3 sm:p-4 bg-[#0e0e0e]">
+                    <div className="flex items-center justify-between p-5 sm:p-6 bg-[#222222] rounded-[1.5rem] group-hover:bg-cyan transition-colors duration-500">
+                      <div className="flex flex-col gap-1">
+                        <h3 className="font-[family-name:var(--font-bebas)] text-cyan group-hover:text-black text-xl sm:text-2xl md:text-3xl tracking-wide transition-colors duration-500">
+                          {program.heading ?? `${program.city} ACADEMY`}
+                        </h3>
+                        <p className="font-[family-name:var(--font-bebas)] text-cyan/50 group-hover:text-black/50 text-base sm:text-lg md:text-xl tracking-wide flex items-center gap-1.5 transition-colors duration-500">
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="flex-shrink-0"
+                          >
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                          </svg>
+                          {program.location}
+                        </p>
+                        <p className="text-white/30 group-hover:text-black/30 text-xs mt-0.5 transition-colors duration-500">
+                          {program.status}
+                        </p>
+                      </div>
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#333333] group-hover:bg-black flex items-center justify-center transition-all duration-500">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="group-hover:stroke-cyan transition-colors duration-500"
+                        >
+                          <path d="M5 12h14m-7-7 7 7-7 7" />
                         </svg>
-                        {program.location}
-                      </p>
-                      <p className="text-white/30 group-hover:text-black/30 text-xs mt-0.5 transition-colors duration-500">
-                        {program.status}
-                      </p>
-                    </div>
-                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#333333] group-hover:bg-black flex items-center justify-center transition-all duration-500">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-cyan transition-colors duration-500">
-                        <path d="M5 12h14m-7-7 7 7-7 7" />
-                      </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
+                </article>
               </Link>
             </div>
           ))}
@@ -399,7 +498,13 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 sm:gap-16 lg:gap-24 mb-12 sm:mb-20">
           {/* Left: Logo */}
           <div className="flex flex-col gap-4 justify-center">
-            <Image src="/assets/throttle.png" alt="Throttle Connectors" width={120} height={120} className="h-[80px] w-[80px] sm:h-[100px] sm:w-[100px] md:h-[120px] md:w-[120px] object-contain" />
+            <Image
+              src="/assets/throttle.png"
+              alt="Throttle Connectors"
+              width={120}
+              height={120}
+              className="h-[80px] w-[80px] sm:h-[100px] sm:w-[100px] md:h-[120px] md:w-[120px] object-contain"
+            />
           </div>
 
           {/* Right: Three columns */}
@@ -411,11 +516,23 @@ export default function Home() {
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                 </span>
-                <span className="text-white/60 text-sm tracking-wider">Navigation</span>
+                <span className="text-white/60 text-sm tracking-wider">
+                  Navigation
+                </span>
               </div>
               <div className="flex flex-col gap-3 mt-2">
-                <a href="#about" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">About Us</a>
-                <Link href="/academy" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Academy</Link>
+                <a
+                  href="#about"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  About Us
+                </a>
+                <Link
+                  href="/academy"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  Academy
+                </Link>
               </div>
             </div>
 
@@ -426,12 +543,29 @@ export default function Home() {
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                 </span>
-                <span className="text-white/60 text-sm tracking-wider">Socials</span>
+                <span className="text-white/60 text-sm tracking-wider">
+                  Socials
+                </span>
               </div>
               <div className="flex flex-col gap-3 mt-2">
-                <a href="https://www.instagram.com/throttleconnectors?igsh=c3N4NDc4aHZmYWlr" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Instagram</a>
-                <a href="https://www.linkedin.com/in/krishna-prajapati-a3aa5a315?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">LinkedIn</a>
-                <a href="https://www.facebook.com/share/1FvF4bWYsy/" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Facebook</a>
+                <a
+                  href="https://www.instagram.com/throttleconnectors?igsh=c3N4NDc4aHZmYWlr"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/krishna-prajapati-a3aa5a315?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://www.facebook.com/share/1FvF4bWYsy/"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  Facebook
+                </a>
               </div>
             </div>
 
@@ -442,20 +576,32 @@ export default function Home() {
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
                 </span>
-                <span className="text-white/60 text-sm tracking-wider">Get in touch</span>
+                <span className="text-white/60 text-sm tracking-wider">
+                  Get in touch
+                </span>
               </div>
               <div className="flex flex-col gap-3 mt-2">
-                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">+91 8467042523</span>
-                <span className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all">throttleconnectors@gmail.com</span>
-                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">Office - Kanpur, Uttar Pradesh</span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">
+                  +91 8467042523
+                </span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all">
+                  throttleconnectors@gmail.com
+                </span>
+                <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">
+                  Office - Kanpur, Uttar Pradesh
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom copyright */}
-        <div className="border-t border-white/10 pt-8 text-center">
-          <p className="text-white/40 text-sm tracking-wide">
+        <div className="border-t border-white/10 pt-8 pb-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="font-[family-name:var(--font-bebas)] text-white/40 text-base sm:text-lg tracking-wider">
+            Developed & Designed by <span className="text-cyan">Osman</span> and{" "}
+            <span className="text-cyan">Arbaaz</span>
+          </p>
+          <p className="font-[family-name:var(--font-bebas)] text-white/30 text-base sm:text-lg tracking-wider">
             ©2026 Copyright All Rights Reserved
           </p>
         </div>
