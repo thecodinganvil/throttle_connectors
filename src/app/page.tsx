@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
@@ -8,8 +9,7 @@ import TestimonialsCarousel from "../components/TestimonialsCarousel";
 /* ── Menu link data ── */
 const NAV_LINKS = [
   { label: "About Us", href: "#about" },
-  { label: "Academy", href: "#academy" },
-  { label: "Contact", href: "#contact" },
+  { label: "Academy", href: "/academy" },
 ];
 
 export default function Home() {
@@ -166,7 +166,7 @@ export default function Home() {
               width={100}
               height={100}
               priority
-              className="h-[55px] w-[55px] object-contain sm:h-[70px] sm:w-[70px] md:h-[85px] md:w-[85px] transition-all duration-500"
+              className="h-[65px] w-[65px] object-contain sm:h-[80px] sm:w-[80px] md:h-[100px] md:w-[100px] transition-all duration-500"
             />
           </div>
 
@@ -175,8 +175,7 @@ export default function Home() {
             menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}>
             <a href="#about" className="nav-pill">About Us</a>
-            <a href="#academy" className="nav-pill">Academy</a>
-            <a href="#contact" className="nav-pill">Contact</a>
+            <Link href="/academy" className="nav-pill">Academy</Link>
           </nav>
 
           {/* Hamburger Button (Aligned with nav) */}
@@ -312,35 +311,26 @@ export default function Home() {
         {/* Academy Cards Grid - 2x2 */}
         <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {[
-            { city: "BANGALORE", title: "KARTING & FORMULA CAR", status: "Starts Soon" },
-            { city: "HYDERABAD", title: "KARTING & FORMULA CAR", status: "Coming Soon" },
-            { city: "AHMEDABAD", title: "KARTING & FORMULA CAR", status: "Coming Soon" },
-            { city: "COIMBATORE", title: "KARTING & FORMULA CAR", status: "Coming Soon" }
+            { city: "BANGALORE", slug: "bangalore", title: "KARTING & FORMULA CAR ACADEMY", status: "3-Day Program", location: "Red Riders Go Karting, Bangalore", image: "/assets/bangalore.jpeg" },
+            { city: "HYDERABAD", slug: "hyderabad", title: "KARTING ACADEMY", status: "30–31 March", location: "Tspeedway, Hyderabad", image: "/assets/hyderabad.jpeg" },
+            { city: "COIMBATORE", slug: "coimbatore", title: "FORMULA CAR ACADEMY", status: "Now Open", location: "Kari Motor Speedway, Coimbatore", image: "/assets/coimbatore.jpeg" },
+            { city: "AHMEDABAD", slug: "ahmedabad", title: "KARTING ACADEMY", status: "Launching Soon", location: "Venue TBA", image: "/assets/ahmedabad.jpeg" }
           ].map((program, idx) => (
             <div
               key={idx}
               className="w-full"
             >
+              <Link href={`/academy/${program.slug}`}>
               <article className="w-full group bg-[#0e0e0e] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.8)] hover:border-cyan/30 transition-all duration-500">
                 {/* Banner Image */}
                 <div className="relative w-full aspect-[16/9] bg-[#1a1a1a] overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('/placeholder-racing.jpg')] bg-cover bg-center opacity-60 grayscale-[20%]" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center select-none">
-                    <div className="font-[family-name:var(--font-bebas)] italic tracking-tight scale-90 sm:scale-100">
-                      <div className="text-[#f1b42f] text-xl sm:text-2xl md:text-3xl drop-shadow-[4px_4px_0px_rgba(0,0,0,0.8)]">
-                        {program.city} BE READY FOR
-                      </div>
-                      <div className="relative mt-2 items-center justify-center inline-flex">
-                        <div className="absolute inset-0 bg-black/90 -skew-x-12 translate-y-1" />
-                        <div className="relative text-white text-3xl sm:text-4xl md:text-5xl px-6 py-1 drop-shadow-[4px_4px_0px_rgba(0,0,0,0.5)]">
-                          {program.title}
-                        </div>
-                      </div>
-                      <div className="text-white text-3xl sm:text-4xl md:text-5xl mt-1 drop-shadow-[4px_4px_0px_rgba(0,0,0,0.5)]">
-                        ACADEMY
-                      </div>
-                    </div>
-                  </div>
+                  <Image
+                    src={program.image}
+                    alt={`${program.city} Academy`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
 
                 {/* Content Section */}
@@ -350,7 +340,16 @@ export default function Home() {
                       <h3 className="font-[family-name:var(--font-bebas)] text-cyan group-hover:text-black text-xl sm:text-2xl md:text-3xl tracking-wide transition-colors duration-500">
                         {program.city} ACADEMY
                       </h3>
-                      <p className="text-white/40 group-hover:text-black/40 text-sm transition-colors duration-500">{program.status}</p>
+                      <p className="font-[family-name:var(--font-bebas)] text-cyan/50 group-hover:text-black/50 text-base sm:text-lg md:text-xl tracking-wide flex items-center gap-1.5 transition-colors duration-500">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                          <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        {program.location}
+                      </p>
+                      <p className="text-white/30 group-hover:text-black/30 text-xs mt-0.5 transition-colors duration-500">
+                        {program.status}
+                      </p>
                     </div>
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#333333] group-hover:bg-black flex items-center justify-center transition-all duration-500">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-cyan transition-colors duration-500">
@@ -360,6 +359,7 @@ export default function Home() {
                   </div>
                 </div>
               </article>
+              </Link>
             </div>
           ))}
         </div>
@@ -371,29 +371,9 @@ export default function Home() {
       {/* ═══════ FOOTER ═══════ */}
       <footer className="relative w-full bg-black px-4 sm:px-8 md:px-16 lg:px-24 pt-14 sm:pt-20 md:pt-28 pb-8 sm:pb-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 sm:gap-16 lg:gap-24 mb-12 sm:mb-20">
-          {/* Left: Newsletter */}
-          <div className="flex flex-col gap-6">
-            <h3 className="font-[family-name:var(--font-bebas)] text-white text-xl sm:text-2xl tracking-wide uppercase">
-              Receive Update News
-            </h3>
-            <div className="flex flex-col gap-4">
-              <input
-                type="email"
-                placeholder="Enter your mail"
-                className="bg-transparent border-b border-white/20 text-white/70 text-sm pb-3 outline-none focus:border-white/50 transition-colors placeholder:text-white/30 w-full max-w-xs"
-              />
-              <a href="#" className="cta-button group mt-2 self-start">
-                <span className="text-sm font-medium tracking-wide z-10">
-                  Subscribe
-                </span>
-                <span className="cta-icon-wrapper">
-                  <svg className="cta-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </span>
-              </a>
-            </div>
+          {/* Left: Logo */}
+          <div className="flex flex-col gap-4 justify-center">
+            <Image src="/assets/throttle.png" alt="Throttle Connectors" width={120} height={120} className="h-[80px] w-[80px] sm:h-[100px] sm:w-[100px] md:h-[120px] md:w-[120px] object-contain" />
           </div>
 
           {/* Right: Three columns */}
@@ -409,8 +389,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-3 mt-2">
                 <a href="#about" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">About Us</a>
-                <a href="#academy" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Academy</a>
-                <a href="#contact" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Contact</a>
+                <Link href="/academy" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">Academy</Link>
               </div>
             </div>
 
@@ -451,7 +430,7 @@ export default function Home() {
         {/* Bottom copyright */}
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-white/40 text-sm tracking-wide">
-            ©2026 Throttle Connectors Copyright All Rights Reserved
+            ©2026 Copyright All Rights Reserved
           </p>
         </div>
       </footer>
