@@ -230,7 +230,7 @@ export default function TestimonialsCarousel() {
   return (
     <section
       id="testimonials"
-      className="relative w-full bg-[#0a0a0a] py-16 sm:py-24 md:py-40 overflow-hidden"
+      className="relative w-full bg-[#0a0a0a] py-16 sm:py-24 md:py-28 lg:py-40 overflow-hidden"
     >
       {/* Section heading */}
       <div className="px-4 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto mb-8 sm:mb-12 md:mb-20">
@@ -243,13 +243,13 @@ export default function TestimonialsCarousel() {
             Testimonials
           </span>
         </div>
-        <h2 className="font-[family-name:var(--font-bebas)] text-cyan text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight uppercase max-w-4xl">
+        <h2 className="font-[family-name:var(--font-bebas)] text-cyan text-4xl sm:text-5xl md:text-6xl lg:text-8xl leading-[0.95] tracking-tight uppercase max-w-4xl">
           What Our Racers Say About Us
         </h2>
       </div>
 
-      {/* ═══ MOBILE: Horizontal Swipe Carousel ═══ */}
-      <div className="md:hidden">
+      {/* ═══ MOBILE + TABLET: Horizontal Swipe Carousel ═══ */}
+      <div className="lg:hidden">
         <div className="relative">
           {/* Side fades */}
           <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
@@ -257,7 +257,7 @@ export default function TestimonialsCarousel() {
 
           <div
             ref={trackRef}
-            className="testimonial-track flex gap-4 sm:gap-6 overflow-x-auto px-4 sm:px-8 pb-4 cursor-grab active:cursor-grabbing select-none"
+            className="testimonial-track flex gap-4 sm:gap-6 overflow-x-auto px-4 sm:px-8 md:px-12 pb-4 cursor-grab active:cursor-grabbing select-none"
             onScroll={handleScroll}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
@@ -267,7 +267,7 @@ export default function TestimonialsCarousel() {
             {TESTIMONIALS.map((t, idx) => (
               <div
                 key={idx}
-                className="testimonial-card flex-shrink-0 w-[82vw] sm:w-[75vw]"
+                className="testimonial-card flex-shrink-0 w-[82vw] sm:w-[70vw] md:w-[55vw]"
               >
                 <TestimonialCard t={t} idx={idx} size="normal" />
               </div>
@@ -335,7 +335,7 @@ export default function TestimonialsCarousel() {
       </div>
 
       {/* ═══ DESKTOP: Vertical Marquee Animation (two columns) ═══ */}
-      <div className="hidden md:block px-5 sm:px-8 md:px-12 lg:px-20">
+      <div className="hidden lg:block px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto grid grid-cols-2 gap-8">
           {/* Left column - scrolls up */}
           <div className="relative h-[700px] overflow-hidden">
@@ -362,7 +362,7 @@ export default function TestimonialsCarousel() {
       </div>
 
       {/* CTA at bottom */}
-      <div className="max-w-7xl mx-auto mt-16 md:mt-24 flex flex-col items-center text-center px-5">
+      <div className="max-w-7xl mx-auto mt-12 sm:mt-16 md:mt-20 lg:mt-24 flex flex-col items-center text-center px-5">
         <span className="font-[family-name:var(--font-bebas)] text-white/10 text-[6rem] sm:text-[8rem] leading-none select-none">
           ★
         </span>
