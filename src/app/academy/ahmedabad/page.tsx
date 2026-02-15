@@ -367,8 +367,8 @@ export default function AhmedabadAcademy() {
       </main>
 
       {/* ═══════ STICKY REGISTER BAR ═══════ */}
-      <div className="fixed bottom-0 left-0 w-full z-[60] bg-gradient-to-t from-black via-black/95 to-transparent pointer-events-none pb-4 pt-10 sm:pb-5 sm:pt-12">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 flex items-center justify-between pointer-events-auto">
+      <div className="fixed bottom-0 left-0 w-full z-[60] bg-gradient-to-t from-black via-black/95 to-transparent pointer-events-none pb-4 pt-10 sm:pb-6 sm:pt-12">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-8 md:px-12 lg:px-20 flex items-center justify-between gap-3 pointer-events-auto">
           <div className="hidden sm:flex flex-col">
             <span className="font-[family-name:var(--font-bebas)] text-white text-lg tracking-wide">
               AHMEDABAD ACADEMY
@@ -379,7 +379,7 @@ export default function AhmedabadAcademy() {
           </div>
           <Link
             href="/#contact"
-            className="w-full sm:w-auto bg-cyan hover:bg-cyan/90 text-black font-bold text-sm sm:text-base tracking-wide px-8 py-3.5 sm:py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,255,255,0.3)]"
+            className="w-full sm:w-auto bg-cyan hover:bg-cyan/90 text-black font-bold text-xs sm:text-sm md:text-base tracking-wide px-4 py-3 sm:px-8 sm:py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,255,255,0.3)]"
           >
             <span>Register Interest</span>
             <svg
@@ -478,10 +478,16 @@ export default function AhmedabadAcademy() {
                 </span>
               </div>
               <div className="flex flex-col gap-3 mt-2">
-                <a href="tel:+918467042523" className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity">
+                <a
+                  href="tel:+918467042523"
+                  className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
                   +91 8467042523
                 </a>
-                <a href="mailto:throttleconnectors@gmail.com" className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all hover:opacity-50 transition-opacity">
+                <a
+                  href="mailto:throttleconnectors@gmail.com"
+                  className="font-[family-name:var(--font-bebas)] text-white text-sm sm:text-base md:text-lg tracking-wide uppercase break-all hover:opacity-50 transition-opacity"
+                >
                   throttleconnectors@gmail.com
                 </a>
                 <span className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase">

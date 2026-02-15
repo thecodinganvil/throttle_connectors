@@ -9,6 +9,14 @@
   --dark-overlay: rgba(0, 0, 0, 0.55);
 }
 
+/* Support for safe areas on notched devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -19,6 +27,12 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -26,6 +40,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), "Inter", sans-serif;
   overflow-x: hidden;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 /* ===== Scrollbar ===== */
@@ -49,13 +65,20 @@ body.menu-open {
 .hamburger-btn {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 8px;
+  gap: 8px;
+  padding: 6px;
   cursor: pointer;
   z-index: 60;
   background: none;
   border: none;
   transition: opacity 0.2s;
+}
+
+@media (min-width: 640px) {
+  .hamburger-btn {
+    gap: 12px;
+    padding: 8px;
+  }
 }
 .hamburger-btn:hover {
   opacity: 0.7;
@@ -63,11 +86,17 @@ body.menu-open {
 
 .hamburger-line {
   display: block;
-  width: 28px;
+  width: 24px;
   height: 2px;
   background: #ededed;
   transition: all 0.4s cubic-bezier(0.77, 0, 0.18, 1);
   transform-origin: center;
+}
+
+@media (min-width: 640px) {
+  .hamburger-line {
+    width: 28px;
+  }
 }
 
 /* ✕ state */
@@ -127,8 +156,8 @@ body.menu-open {
 
 /* ===== Social Icon ===== */
 .social-icon {
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
   display: flex;
@@ -139,6 +168,13 @@ body.menu-open {
   overflow: hidden;
   z-index: 1;
   transition: color 0.35s ease, border-color 0.35s ease;
+}
+
+@media (min-width: 640px) {
+  .social-icon {
+    width: 52px;
+    height: 52px;
+  }
 }
 .social-icon::before {
   content: "";
@@ -277,8 +313,8 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px; /* Space between text and icon */
-  padding: 6px 6px 6px 20px; /* Adjusted padding for smaller size */
+  gap: 8px; /* Space between text and icon */
+  padding: 5px 5px 5px 16px; /* Adjusted padding for mobile */
   border-radius: 9999px;
   color: #ffffff;
   text-decoration: none;
@@ -289,6 +325,13 @@ body.menu-open {
   transition: color 0.4s ease;
 }
 
+@media (min-width: 640px) {
+  .cta-button {
+    gap: 10px;
+    padding: 6px 6px 6px 20px;
+  }
+}
+
 /* Expanding Cyan Background */
 .cta-button::before {
   content: "";
@@ -296,11 +339,17 @@ body.menu-open {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 44px; /* Reduced initial size */
+  width: 38px; /* Reduced initial size for mobile */
   background: var(--cyan);
   border-radius: 9999px;
   transition: width 0.5s cubic-bezier(0.65, 0, 0.35, 1); /* Smooth eased expansion */
   z-index: -1;
+}
+
+@media (min-width: 640px) {
+  .cta-button::before {
+    width: 44px;
+  }
 }
 
 /* Hover State */
@@ -316,10 +365,18 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px; /* Reduced wrapper size */
-  height: 32px; /* Reduced wrapper size */
+  width: 28px; /* Reduced for mobile */
+  height: 28px; /* Reduced for mobile */
   z-index: 2;
 }
+
+@media (min-width: 640px) {
+  .cta-icon-wrapper {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .cta-icon-svg {
   transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), stroke 0.4s ease;
   stroke: #0a0a0a; /* Default black icon */
@@ -327,4 +384,25 @@ body.menu-open {
 .cta-button:hover .cta-icon-svg {
   transform: rotate(45deg); /* Plus -> X */
   stroke: #ffffff; /* Becomes white on hover */
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  .menu-link-large {
+    padding: 8px 0;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-icon {
+    min-width: 48px;
+    min-height: 48px;
+  }
+  
+  .nav-pill {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
 }
