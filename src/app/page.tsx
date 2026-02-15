@@ -141,8 +141,8 @@ export default function Home() {
           <div className="hidden md:block relative h-full w-full overflow-hidden p-24 lg:p-32 xl:p-48">
             <div className="w-full h-full relative rounded-2xl overflow-hidden group/menu-img">
               <Image 
-                src="/assets/racing-team.jpg" 
-                alt="Racing team" 
+                src="/assets/academy_page1.jpeg" 
+                alt="Throttle Connectors Racing Team" 
                 fill 
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover/menu-img:scale-100"
               />
@@ -160,14 +160,16 @@ export default function Home() {
       >
         <div className="flex items-center justify-between w-full">
           <div className="flex-shrink-0">
-            <Image
-              src="/assets/throttle.png"
-              alt="Throttle Connectors logo"
-              width={100}
-              height={100}
-              priority
-              className="h-[65px] w-[65px] object-contain sm:h-[80px] sm:w-[80px] md:h-[100px] md:w-[100px] transition-all duration-500"
-            />
+            <Link href="/" className="block">
+              <Image
+                src="/assets/throttle.png"
+                alt="Throttle Connectors logo"
+                width={100}
+                height={100}
+                priority
+                className="h-[65px] w-[65px] object-contain sm:h-[80px] sm:w-[80px] md:h-[100px] md:w-[100px] transition-all duration-500"
+              />
+            </Link>
           </div>
 
           {/* Centered nav pills (Hidden when menu is open) */}
@@ -252,16 +254,14 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-10 md:gap-12 lg:gap-20 items-start">
-          <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl group">
-            <div className="absolute inset-0 bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
-              <Image 
-                src="/assets/academy_page2.jpeg" 
-                alt="Throttle Connectors Academy Students" 
-                fill 
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
+          <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl group bg-white/[0.04] border border-white/[0.08]">
+            <Image 
+              src="/assets/academy_page2.jpeg" 
+              alt="Throttle Connectors Academy Students" 
+              fill 
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
 
           <div className="flex flex-col justify-center md:pt-16 lg:pt-24 gap-6">
@@ -293,7 +293,7 @@ export default function Home() {
                 </span>
               </a>
 
-              <div className="relative w-56 h-36 sm:w-80 sm:h-52 md:w-[400px] md:h-[250px] overflow-hidden flex-shrink-0 rounded-2xl border border-white/10 group shadow-2xl shadow-black/50">
+              <div className="relative w-56 h-36 sm:w-80 sm:h-52 md:w-[400px] md:h-[250px] overflow-hidden flex-shrink-0 rounded-2xl border border-white/10 group shadow-2xl shadow-black/50 bg-white/[0.04]">
                 <Image 
                   src="/assets/bangalore_page5.jpeg" 
                   alt="Racing Action" 
