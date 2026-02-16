@@ -603,8 +603,10 @@ export default function HyderabadAcademy() {
             <p className="text-white/50 text-sm mb-6 tracking-wide">
               Ready to start your racing journey?
             </p>
-            <Link
-              href="/#contact"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSehzmnVp0bjYi22LYPkm5LtVQUVUkLMu-e_CEwXXh7LF6bnTA/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cta-button group inline-flex mx-auto"
             >
               <span className="text-sm sm:text-base font-medium tracking-wide z-10">
@@ -625,7 +627,7 @@ export default function HyderabadAcademy() {
                   <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
               </span>
-            </Link>
+            </a>
           </div>
         </div>
       </main>
@@ -642,8 +644,10 @@ export default function HyderabadAcademy() {
               <span className="text-cyan font-semibold">₹11,499</span>
             </span>
           </div>
-          <Link
-            href="/#contact"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSehzmnVp0bjYi22LYPkm5LtVQUVUkLMu-e_CEwXXh7LF6bnTA/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto bg-cyan hover:bg-cyan/90 text-black font-bold text-xs sm:text-sm md:text-base tracking-wide px-4 py-3 sm:px-8 sm:py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,255,255,0.3)]"
           >
             <span>Register Now</span>
@@ -659,7 +663,7 @@ export default function HyderabadAcademy() {
             >
               <path d="M5 12h14m-7-7 7 7-7 7" />
             </svg>
-          </Link>
+          </a>
         </div>
       </div>
 

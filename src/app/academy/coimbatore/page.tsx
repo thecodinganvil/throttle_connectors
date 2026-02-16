@@ -308,6 +308,26 @@ export default function CoimbatoreAcademy() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
         </div>
 
+        {/* ── Coimbatore Academy Images ── */}
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-8">
+          <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+            <Image
+              src="/assets/coimbatore_academy.jpeg"
+              alt="Coimbatore Academy"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+            <Image
+              src="/assets/coimbatore_academy2.jpeg"
+              alt="Coimbatore Academy 2"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        </div>
+
         {/* ── Content ── */}
         <div className="academy-content">
           {/* ── Quick Info ── */}
@@ -612,29 +632,12 @@ export default function CoimbatoreAcademy() {
             <p className="text-white/50 text-sm mb-6 tracking-wide">
               Ready to experience real Formula Car racing?
             </p>
-            <Link
-              href="/#contact"
-              className="cta-button group inline-flex mx-auto"
+            <button
+              type="button"
+              className="w-full sm:w-auto bg-cyan hover:bg-cyan/90 text-black font-bold text-sm sm:text-base tracking-wide px-6 py-3 rounded-full inline-flex items-center justify-center"
             >
-              <span className="text-sm sm:text-base font-medium tracking-wide z-10">
-                Register Now
-              </span>
-              <span className="cta-icon-wrapper">
-                <svg
-                  className="cta-icon-svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg>
-              </span>
-            </Link>
+              <span>Registrations will open soon</span>
+            </button>
           </div>
         </div>
       </main>
@@ -651,24 +654,12 @@ export default function CoimbatoreAcademy() {
               <span className="text-cyan font-semibold">₹45,000</span>
             </span>
           </div>
-          <Link
-            href="/#contact"
+          <button
+            type="button"
             className="w-full sm:w-auto bg-cyan hover:bg-cyan/90 text-black font-bold text-xs sm:text-sm md:text-base tracking-wide px-4 py-3 sm:px-8 sm:py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,255,255,0.3)]"
           >
-            <span>Register Now</span>
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14m-7-7 7 7-7 7" />
-            </svg>
-          </Link>
+            <span>Registrations will open soon</span>
+          </button>
         </div>
       </div>
 

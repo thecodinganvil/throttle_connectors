@@ -8,6 +8,14 @@ import gsap from "gsap";
 /* ── Academy program data ── */
 const PROGRAMS = [
   {
+    city: "HYDERABAD",
+    slug: "hyderabad",
+    title: "KARTING ACADEMY",
+    status: "30–31 March",
+    location: "Tspeedway, Hyderabad",
+    image: "/assets/hyderabad.jpeg",
+  },
+  {
     city: "BANGALORE",
     slug: "bangalore",
     title: "KARTING & FORMULA CAR ACADEMY",
@@ -15,14 +23,6 @@ const PROGRAMS = [
     location: "Red Riders Go Karting, Bangalore",
     image: "/assets/bangalore.jpeg",
     heading: "BANGALORE ACADEMY",
-  },
-  {
-    city: "HYDERABAD",
-    slug: "hyderabad",
-    title: "KARTING ACADEMY",
-    status: "30–31 March",
-    location: "Tspeedway, Hyderabad",
-    image: "/assets/hyderabad.jpeg",
   },
   {
     city: "COIMBATORE",
