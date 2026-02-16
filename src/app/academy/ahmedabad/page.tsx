@@ -334,69 +334,11 @@ export default function AhmedabadAcademy() {
             </div>
           </div>
 
-          {/* ── CTA ── */}
-          <div className="text-center">
-            <p className="text-white/50 text-sm mb-6 tracking-wide">
-              Be the first to know when registration opens
-            </p>
-            <Link
-              href="/#contact"
-              className="cta-button group inline-flex mx-auto"
-            >
-              <span className="text-sm sm:text-base font-medium tracking-wide z-10">
-                Register Interest
-              </span>
-              <span className="cta-icon-wrapper">
-                <svg
-                  className="cta-icon-svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg>
-              </span>
-            </Link>
-          </div>
+          {/* CTA removed per request */}
         </div>
       </main>
 
-      {/* ═══════ STICKY REGISTER BAR ═══════ */}
-      <div className="fixed bottom-0 left-0 w-full z-[60] bg-gradient-to-t from-black via-black/95 to-transparent pointer-events-none pb-4 pt-10 sm:pb-6 sm:pt-12">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-8 md:px-12 lg:px-20 flex items-center justify-between gap-3 pointer-events-auto">
-          <div className="hidden sm:flex flex-col">
-            <span className="font-[family-name:var(--font-bebas)] text-white text-lg tracking-wide">
-              AHMEDABAD ACADEMY
-            </span>
-            <span className="text-cyan text-xs font-semibold tracking-wider uppercase">
-              Launching Soon
-            </span>
-          </div>
-          <Link
-            href="/#contact"
-            className="w-full sm:w-auto bg-cyan hover:bg-cyan/90 text-black font-bold text-xs sm:text-sm md:text-base tracking-wide px-4 py-3 sm:px-8 sm:py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,255,255,0.3)]"
-          >
-            <span>Register Interest</span>
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14m-7-7 7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
-      </div>
+      {/* Sticky register bar removed for Ahmedabad per request */}
 
       {/* ═══════ FOOTER ═══════ */}
       <footer className="relative w-full bg-black px-4 sm:px-8 md:px-16 lg:px-24 pt-14 sm:pt-20 md:pt-28 pb-24 sm:pb-28">
