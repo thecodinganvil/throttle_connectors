@@ -331,7 +331,7 @@ export default function CoimbatoreAcademy() {
         {/* ── Content ── */}
         <div className="academy-content">
           {/* ── Quick Info ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-16 sm:mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-16 sm:mb-20">
             <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-white/[0.08]">
               <p className="text-white/40 text-xs tracking-widest uppercase mb-2">
                 Track
@@ -346,6 +346,14 @@ export default function CoimbatoreAcademy() {
               </p>
               <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">
                 LGB Formula Car Programs
+              </p>
+            </div>
+            <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-cyan/20">
+              <p className="text-white/40 text-xs tracking-widest uppercase mb-2">
+                Dates
+              </p>
+              <p className="font-[family-name:var(--font-bebas)] text-cyan text-lg sm:text-xl tracking-wide">
+                9–10 April
               </p>
             </div>
           </div>
