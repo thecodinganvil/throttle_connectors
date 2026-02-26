@@ -80,6 +80,11 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-site-verification-code",
   },
+  icons: {
+    icon: "/assets/throttle_favicon.jpeg",
+    shortcut: "/assets/throttle_favicon.jpeg",
+    apple: "/assets/throttle_favicon.jpeg",
+  },
 };
 
 export const viewport = {
