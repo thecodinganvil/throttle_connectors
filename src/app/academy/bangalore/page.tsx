@@ -470,7 +470,7 @@ export default function BangaloreAcademy() {
             </div>
 
             {/* Day 3 – Full Width */}
-            <div className="bg-[#111111] rounded-2xl p-6 sm:p-8 border border-white/[0.08]">
+            <div className="bg-gradient-to-br from-[#111111] to-[#0d1a1a] rounded-2xl p-6 sm:p-8 border border-cyan/20">
               <div className="flex items-center gap-3 mb-6">
                 <span className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl leading-none">
                   03
@@ -480,27 +480,73 @@ export default function BangaloreAcademy() {
                     Day
                   </p>
                   <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">
-                    Formula Car Exposure &amp; Motorsport Pathway
+                    Formula 1300
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
-                {[
-                  "Introduction to real Formula Car systems",
-                  "Driver seating position and seat fitting process",
-                  "Understanding racing gears and safety equipment",
-                  "Technical briefing on car dynamics and setup basics",
-                  "Insights into professional racing championships",
-                  "Guidance on sponsorship and the commercial side of motorsport",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 text-white/60 text-sm list-none"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-cyan mt-2 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {/* Left – description */}
+                <div className="space-y-4">
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                    All participants will attend Day 3. However, driving the
+                    Formula Car is{" "}
+                    <span className="text-cyan font-medium">
+                      not open to everyone directly.
+                    </span>
+                  </p>
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                    Every participant must prove their skills and consistency
+                    during the first 2 days of karting.
+                  </p>
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                    Only the{" "}
+                    <span className="text-cyan font-semibold">
+                      Top Performers
+                    </span>{" "}
+                    will get the opportunity to drive the Formula 1300 car.
+                  </p>
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                    The remaining participants will observe, learn, and gain
+                    valuable insights from the session. 🏁
+                  </p>
+                </div>
+
+                {/* Right – highlight badges */}
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-start gap-3 bg-black/30 rounded-xl p-4 border border-white/[0.06]">
+                    <span className="text-cyan mt-0.5">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </span>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      All participants attend Day 3
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3 bg-black/30 rounded-xl p-4 border border-cyan/10">
+                    <span className="text-cyan mt-0.5">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      </svg>
+                    </span>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      <span className="text-cyan font-semibold">Top performers</span> earn the right to drive the Formula 1300
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3 bg-black/30 rounded-xl p-4 border border-white/[0.06]">
+                    <span className="text-cyan mt-0.5">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                    </span>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      Others observe, learn &amp; gain valuable insights from the session
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
