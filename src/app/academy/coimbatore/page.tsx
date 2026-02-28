@@ -353,7 +353,7 @@ export default function CoimbatoreAcademy() {
                 Dates
               </p>
               <p className="font-[family-name:var(--font-bebas)] text-cyan text-lg sm:text-xl tracking-wide">
-                9–10 April
+                13–14 April
               </p>
             </div>
           </div>

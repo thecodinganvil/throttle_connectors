@@ -28,7 +28,7 @@ const PROGRAMS = [
     city: "COIMBATORE",
     slug: "coimbatore",
     title: "FORMULA CAR ACADEMY",
-    status: "9–10 April",
+    status: "13–14 April",
     location: "Kari Motor Speedway, Coimbatore",
     image: "/assets/coimbatore.jpeg",
     heading: "COIMBATORE FORMULA CAR ACADEMY",
