@@ -315,19 +315,30 @@ export default function BangaloreAcademy() {
             BANGALORE KARTING &amp; FORMULA CAR ACADEMY
           </h2>
 
-          <div className="max-w-3xl space-y-4 mb-10">
+          <div className="max-w-3xl space-y-5 mb-10">
             <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-              Experience the thrill of real motorsport with our 2 Day Karting and Formula Car Academy in Bangalore. This program is designed for beginners and motorsport enthusiasts who want to understand racing fundamentals and experience driving a real formula car on track.
+              Experience the thrill of real motorsport with our 2 Day Karting + Formula Car Academy in Bangalore, designed for beginners and enthusiasts who want to start their racing journey.
             </p>
-            <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-              Day 1 will focus on karting training at Red Riders Go Karting, where participants will learn essential racing techniques such as racing lines, braking points, cornering, and overall kart control through guided track sessions.
+
+            <div className="space-y-2">
+              <p className="text-white/80 text-sm sm:text-base flex items-start gap-2">
+                <span className="text-cyan font-semibold flex-shrink-0">Day 1:</span>
+                Karting training at Red Riders Go Karting, Bangalore
+              </p>
+              <p className="text-white/80 text-sm sm:text-base flex items-start gap-2">
+                <span className="text-cyan font-semibold flex-shrink-0">Day 2:</span>
+                Real Formula 1300 Car experience at a professional racing circuit, Bangalore, under expert supervision
+              </p>
+            </div>
+
+            <p className="text-white/60 text-sm sm:text-base leading-relaxed">
+              Participants will also receive guidance on the racing driver license process and next steps in motorsport.
             </p>
-            <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-              Day 2 will take drivers to the next level with a Formula Car Academy at a professional racing circuit, where participants will receive a technical briefing and experience driving a real formula race car under professional supervision.
-            </p>
-            <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-              This academy is a great starting point for anyone looking to begin their journey in motorsport. Participants will also receive guidance on the racing driver license process and the next steps in competitive racing.
-            </p>
+
+            <div className="inline-flex items-center gap-2 bg-cyan/10 border border-cyan/30 rounded-full px-4 py-1.5">
+              <span className="text-cyan text-xs font-bold tracking-widest uppercase">Minimum Age</span>
+              <span className="text-white font-bold text-sm">10</span>
+            </div>
           </div>
 
           {/* ── Quick Info Cards ── */}
@@ -373,16 +384,16 @@ export default function BangaloreAcademy() {
           <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image
-                src="/assets/bangalore_page3.jpeg"
-                alt="Karting grid lineup at Bangalore"
+                src="/assets/bangalore_update2.png"
+                alt="Karting briefing session at Red Riders Go Karting, Bangalore"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image
-                src="/assets/bangalore_page4.jpeg"
-                alt="Track walk at Bangalore"
+                src="/assets/bangalore_page3.jpeg"
+                alt="Karting grid lineup at Bangalore"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -450,6 +461,25 @@ export default function BangaloreAcademy() {
                     {item}
                   </li>
                 ))}
+              </div>
+            </div>
+
+            {/* Formula Car reveal — cinematic divider */}
+            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden my-8 md:my-12 group">
+              <Image
+                src="/assets/bangalore_update1.jpeg"
+                alt="Formula 1300 car on track — Bangalore Formula Car Academy"
+                fill
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              {/* gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              {/* label */}
+              <div className="absolute bottom-5 left-5 sm:bottom-8 sm:left-8">
+                <p className="text-white/50 text-xs tracking-[0.25em] uppercase mb-1">Day 2</p>
+                <p className="font-[family-name:var(--font-bebas)] text-cyan text-2xl sm:text-4xl tracking-wide">
+                  Formula 1300 Experience
+                </p>
               </div>
             </div>
 
