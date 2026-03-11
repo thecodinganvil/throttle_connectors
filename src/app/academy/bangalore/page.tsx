@@ -285,7 +285,7 @@ export default function BangaloreAcademy() {
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          RED RIDERS GO KARTING, BANGALORE
+          DAY 1: RED RIDERS GO KARTING · DAY 2: TRACK REVEAL SOON
         </p>
 
         {/* ── Hero Banner ── */}
@@ -317,10 +317,16 @@ export default function BangaloreAcademy() {
 
           <div className="max-w-3xl space-y-4 mb-10">
             <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-              For the first time in Indian grassroots motorsport, a structured
-              Karting + Formula Car Academy is being conducted in Bangalore.
-              This 3-day academy is designed to bridge the gap between karting
-              fundamentals and professional formula racing exposure.
+              Experience the thrill of real motorsport with our 2 Day Karting and Formula Car Academy in Bangalore. This program is designed for beginners and motorsport enthusiasts who want to understand racing fundamentals and experience driving a real formula car on track.
+            </p>
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+              Day 1 will focus on karting training at Red Riders Go Karting, where participants will learn essential racing techniques such as racing lines, braking points, cornering, and overall kart control through guided track sessions.
+            </p>
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+              Day 2 will take drivers to the next level with a Formula Car Academy at a professional racing circuit, where participants will receive a technical briefing and experience driving a real formula race car under professional supervision.
+            </p>
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+              This academy is a great starting point for anyone looking to begin their journey in motorsport. Participants will also receive guidance on the racing driver license process and the next steps in competitive racing.
             </p>
           </div>
 
@@ -328,10 +334,18 @@ export default function BangaloreAcademy() {
           <div className="grid grid-cols-1 min-[400px]:grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
             <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-white/[0.08]">
               <p className="text-white/40 text-xs tracking-widest uppercase mb-2">
-                Venue
+                Day 1 Venue
               </p>
               <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">
                 Red Riders Go Karting, Bangalore
+              </p>
+            </div>
+            <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-white/[0.08]">
+              <p className="text-white/40 text-xs tracking-widest uppercase mb-2">
+                Day 2 Venue
+              </p>
+              <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">
+                Track Reveal Soon
               </p>
             </div>
             <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-cyan/20">
@@ -339,15 +353,7 @@ export default function BangaloreAcademy() {
                 Dates
               </p>
               <p className="font-[family-name:var(--font-bebas)] text-cyan text-lg sm:text-xl tracking-wide">
-                2–3 &amp; 6 April
-              </p>
-            </div>
-            <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-white/[0.08]">
-              <p className="text-white/40 text-xs tracking-widest uppercase mb-2">
-                Duration
-              </p>
-              <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">
-                3 Days Intensive Program
+                2 &amp; 3 April
               </p>
             </div>
             <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-white/[0.08]">
@@ -355,10 +361,10 @@ export default function BangaloreAcademy() {
                 Program Fee
               </p>
               <p className="font-[family-name:var(--font-bebas)] text-cyan text-lg sm:text-xl tracking-wide">
-                ₹26,999
+                ₹21,499
               </p>
               <p className="text-white/40 text-xs mt-1">
-                Early Bird: <span className="text-cyan">₹24,999</span>
+                Early Bird: <span className="text-cyan">₹19,499</span>
               </p>
             </div>
           </div>
@@ -407,97 +413,68 @@ export default function BangaloreAcademy() {
               PROGRAM STRUCTURE
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
-              {/* Day 1 */}
-              <div className="bg-[#111111] rounded-2xl p-6 sm:p-8 border border-white/[0.08]">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl leading-none">
-                    01
-                  </span>
-                  <div>
-                    <p className="text-white/40 text-xs tracking-widest uppercase">
-                      Day
-                    </p>
-                    <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">
-                      Technical Karting Foundations
-                    </p>
-                  </div>
-                </div>
-                <ul className="space-y-3">
-                  {[
-                    "Complete karting fundamentals",
-                    "Precision braking techniques",
-                    "Optimal racing line mastery",
-                    "Overtaking execution",
-                    "Defensive race positioning",
-                    "Core race craft development",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-white/60 text-sm"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-cyan mt-2 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Day 2 */}
-              <div className="bg-[#111111] rounded-2xl p-6 sm:p-8 border border-white/[0.08]">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl leading-none">
-                    02
-                  </span>
-                  <div>
-                    <p className="text-white/40 text-xs tracking-widest uppercase">
-                      Day
-                    </p>
-                    <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">
-                      Competitive Karting Application
-                    </p>
-                  </div>
-                </div>
-                <ul className="space-y-3">
-                  {[
-                    "Wheel-to-wheel race simulations",
-                    "Real race scenario decision making",
-                    "Performance evaluation sessions",
-                    "Advanced race craft training",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-white/60 text-sm"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-cyan mt-2 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Day 3 – Full Width */}
-            <div className="bg-gradient-to-br from-[#111111] to-[#0d1a1a] rounded-2xl p-6 sm:p-8 border border-cyan/20">
-              <div className="flex items-center gap-3 mb-6">
+            {/* Day 1 – Karting Academy (Full Width) */}
+            <div className="bg-[#111111] rounded-2xl p-6 sm:p-8 border border-white/[0.08] mb-8 md:mb-12">
+              <div className="flex items-center gap-3 mb-2">
                 <span className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl leading-none">
-                  03
+                  01
                 </span>
                 <div>
                   <p className="text-white/40 text-xs tracking-widest uppercase">
                     Day
                   </p>
                   <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">
-                    Formula 1300
+                    Karting Academy
                   </p>
                 </div>
               </div>
+              <p className="text-white/40 text-xs mb-6 mt-1">Red Riders Go Karting, Bangalore</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+                {[
+                  "Complete karting fundamentals",
+                  "Precision braking techniques",
+                  "Optimal racing line mastery",
+                  "Overtaking execution",
+                  "Defensive race positioning",
+                  "Core race craft development",
+                  "Wheel-to-wheel race simulations",
+                  "Real race scenario decision making",
+                  "Performance evaluation sessions",
+                  "Advanced race craft training",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-white/60 text-sm list-none"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-cyan mt-2 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </div>
+            </div>
 
+            {/* Day 2 – Formula Car Academy (Full Width) */}
+            <div className="bg-gradient-to-br from-[#111111] to-[#0d1a1a] rounded-2xl p-6 sm:p-8 border border-cyan/20">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl leading-none">
+                  02
+                </span>
+                <div>
+                  <p className="text-white/40 text-xs tracking-widest uppercase">
+                    Day
+                  </p>
+                  <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">
+                    Formula Car Academy — Formula 1300
+                  </p>
+                </div>
+              </div>
+              <p className="text-white/40 text-xs mb-6">Track Reveal Soon</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
                 {/* Left – description */}
                 <div className="space-y-4">
                   <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-                    All participants will attend Day 3. However, driving the
+                    All participants will attend Day 2. However, driving the
                     Formula Car is{" "}
                     <span className="text-cyan font-medium">
                       not open to everyone directly.
@@ -505,7 +482,7 @@ export default function BangaloreAcademy() {
                   </p>
                   <p className="text-white/70 text-sm sm:text-base leading-relaxed">
                     Every participant must prove their skills and consistency
-                    during the first 2 days of karting.
+                    during Day 1 of karting.
                   </p>
                   <p className="text-white/70 text-sm sm:text-base leading-relaxed">
                     Only the{" "}
@@ -529,7 +506,7 @@ export default function BangaloreAcademy() {
                       </svg>
                     </span>
                     <p className="text-white/70 text-sm leading-relaxed">
-                      All participants attend Day 3
+                      All participants attend day 2
                     </p>
                   </div>
                   <div className="flex items-start gap-3 bg-black/30 rounded-xl p-4 border border-cyan/10">
@@ -577,7 +554,7 @@ export default function BangaloreAcademy() {
                   Program Fee
                 </p>
                 <p className="font-[family-name:var(--font-bebas)] text-white text-3xl sm:text-4xl tracking-wide">
-                  ₹26,999
+                  ₹21,499
                 </p>
               </div>
               <div className="bg-[#111111] rounded-2xl p-6 sm:p-8 border border-cyan/20 text-center relative overflow-hidden">
@@ -588,7 +565,7 @@ export default function BangaloreAcademy() {
                   Early Bird Offer
                 </p>
                 <p className="font-[family-name:var(--font-bebas)] text-cyan text-3xl sm:text-4xl tracking-wide">
-                  ₹24,999
+                  ₹19,499
                 </p>
               </div>
             </div>
@@ -661,7 +638,7 @@ export default function BangaloreAcademy() {
             </span>
             <span className="text-white/40 text-xs">
               Starting from{" "}
-              <span className="text-cyan font-semibold">₹24,999</span>
+              <span className="text-cyan font-semibold">₹19,499</span>
             </span>
           </div>
           <a
