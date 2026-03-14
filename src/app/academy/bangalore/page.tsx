@@ -612,8 +612,34 @@ export default function BangaloreAcademy() {
                 Registration
               </span>
             </div>
+            <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-[#132c2c] to-[#111111] border border-cyan/30 p-6 sm:p-8 mb-8 shadow-[0_0_30px_rgba(0,255,255,0.08)] hover:shadow-[0_0_40px_rgba(0,255,255,0.15)] transition-all duration-500 group">
+              {/* Decorative elements */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan/10 blur-[50px] rounded-full pointer-events-none group-hover:bg-cyan/20 transition-colors duration-500" />
+              <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-cyan via-cyan/50 to-transparent" />
+              
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 relative z-10">
+                <div className="flex-shrink-0 bg-black/40 p-4 rounded-full border border-cyan/20 shadow-[0_0_15px_rgba(0,255,255,0.1)] group-hover:border-cyan/40 transition-colors duration-500">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-cyan" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M15 5v2" />
+                    <path d="M15 11v2" />
+                    <path d="M15 17v2" />
+                    <path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7a2 2 0 0 1 2-2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-[family-name:var(--font-bebas)] text-white text-2xl sm:text-3xl tracking-wide mb-1.5">
+                    RESERVE YOUR SEAT AT JUST <span className="text-cyan text-3xl sm:text-4xl align-bottom ml-1">₹5000</span>
+                  </h3>
+                  <p className="text-white/60 text-sm sm:text-base leading-relaxed max-w-lg">
+                    Secure your spot today by paying a booking amount of <span className="text-white/80 font-medium">₹5000</span>. 
+                    The remaining balance is due 1 week before the academy starts.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <p className="text-white/60 text-sm leading-relaxed">
-              For registration, please click on "Registrations," fill out the
+              For registration, please click on "Register Now", fill out the
               Google Form, and complete the payment.
               <br />
               After making the payment, kindly send us a screenshot on WhatsApp
