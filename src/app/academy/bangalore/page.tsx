@@ -285,7 +285,7 @@ export default function BangaloreAcademy() {
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          DAY 1: RED RIDERS GO KARTING · DAY 2: TRACK REVEAL SOON
+          DAY 1- KARTING ACADEMY AT RED RIDERS GO KARTING {` · `} DAY 2- FORMULA 1300 ACADEMY
         </p>
 
         {/* ── Hero Banner ── */}
@@ -320,15 +320,20 @@ export default function BangaloreAcademy() {
               Experience the thrill of real motorsport with our 2 Day Karting + Formula Car Academy in Bangalore, designed for beginners and enthusiasts who want to start their racing journey.
             </p>
 
-            <div className="space-y-2">
-              <p className="text-white/80 text-sm sm:text-base flex items-start gap-2">
-                <span className="text-cyan font-semibold flex-shrink-0">Day 1:</span>
-                Karting training at Red Riders Go Karting, Bangalore
-              </p>
-              <p className="text-white/80 text-sm sm:text-base flex items-start gap-2">
-                <span className="text-cyan font-semibold flex-shrink-0">Day 2:</span>
-                Real Formula 1300 Car experience at a professional racing circuit, Bangalore, under expert supervision
-              </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-2 text-white/80 text-sm sm:text-base">
+                <span className="text-cyan font-semibold flex-shrink-0">Day 1-</span>
+                <span>
+                  Karting Academy at<br />
+                  Red Riders Go Karting
+                </span>
+              </div>
+              <div className="flex items-start gap-2 text-white/80 text-sm sm:text-base">
+                <span className="text-cyan font-semibold flex-shrink-0">Day 2-</span>
+                <span>
+                  Formula 1300 Academy
+                </span>
+              </div>
             </div>
 
             <p className="text-white/60 text-sm sm:text-base leading-relaxed">
@@ -356,7 +361,7 @@ export default function BangaloreAcademy() {
                 Day 2 Venue
               </p>
               <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">
-                Track Reveal Soon
+                Aravani Racing Circuit (ARC)
               </p>
             </div>
             <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-cyan/20">
@@ -435,11 +440,11 @@ export default function BangaloreAcademy() {
                     Day
                   </p>
                   <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">
-                    Karting Academy
+                    Day 1- Karting Academy at Red Riders Go Karting
                   </p>
                 </div>
               </div>
-              <p className="text-white/40 text-xs mb-6 mt-1">Red Riders Go Karting, Bangalore</p>
+              <p className="text-white/40 text-xs mb-6 mt-1">Bangalore</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
                 {[
                   "Complete karting fundamentals",
@@ -478,7 +483,7 @@ export default function BangaloreAcademy() {
               <div className="absolute bottom-5 left-5 sm:bottom-8 sm:left-8">
                 <p className="text-white/50 text-xs tracking-[0.25em] uppercase mb-1">Day 2</p>
                 <p className="font-[family-name:var(--font-bebas)] text-cyan text-2xl sm:text-4xl tracking-wide">
-                  Formula 1300 Experience
+                  Formula 1300 Academy
                 </p>
               </div>
             </div>
@@ -494,11 +499,11 @@ export default function BangaloreAcademy() {
                     Day
                   </p>
                   <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">
-                    Formula Car Academy — Formula 1300
+                    Day 2- Formula 1300 Academy
                   </p>
                 </div>
               </div>
-              <p className="text-white/40 text-xs mb-6">Track Reveal Soon</p>
+              <p className="text-white/40 text-xs mb-6">Aravani Racing Circuit (ARC)</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
                 {/* Left – description */}
