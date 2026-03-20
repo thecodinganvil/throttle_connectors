@@ -361,7 +361,7 @@ export default function BangaloreAcademy() {
                 Day 2 Venue
               </p>
               <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">
-                Aravani Racing Circuit (ARC)
+                FORMULA 1300 ACADEMY
               </p>
             </div>
             <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-cyan/20">
@@ -503,7 +503,7 @@ export default function BangaloreAcademy() {
                   </p>
                 </div>
               </div>
-              <p className="text-white/40 text-xs mb-6">Aravani Racing Circuit (ARC)</p>
+              <p className="text-white/40 text-xs mb-6">FORMULA 1300 ACADEMY</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
                 {/* Left – description */}
