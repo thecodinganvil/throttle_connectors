@@ -509,26 +509,21 @@ export default function BangaloreAcademy() {
                 {/* Left – description */}
                 <div className="space-y-4">
                   <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-                    All participants will attend Day 2. However, driving the
-                    Formula Car is{" "}
-                    <span className="text-cyan font-medium">
-                      not open to everyone directly.
-                    </span>
+                    All participants will attend Day 2.
                   </p>
                   <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-                    Every participant must prove their skills and consistency
-                    during Day 1 of karting.
-                  </p>
-                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-                    Only the{" "}
+                    The{" "}
                     <span className="text-cyan font-semibold">
-                      Top Performers
+                      Top 5 performers
                     </span>{" "}
-                    will get the opportunity to drive the Formula 1300 car.
+                    from Day 1 will be allowed to push the Formula 1300 car on track.
                   </p>
                   <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-                    The remaining participants will observe, learn, and gain
-                    valuable insights from the session. 🏁
+                    For safety reasons, the remaining participants will also get a
+                    chance to drive the Formula 1300 car, but in lower gears.
+                  </p>
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed text-cyan font-medium">
+                    This means every participant will get Formula 1300 driving experience. 🏁
                   </p>
                 </div>
 
@@ -551,7 +546,7 @@ export default function BangaloreAcademy() {
                       </svg>
                     </span>
                     <p className="text-white/70 text-sm leading-relaxed">
-                      <span className="text-cyan font-semibold">Top performers</span> earn the right to drive the Formula 1300
+                      <span className="text-cyan font-semibold">Top 5 performers</span> get to push the car on track
                     </p>
                   </div>
                   <div className="flex items-start gap-3 bg-black/30 rounded-xl p-4 border border-white/[0.06]">
@@ -563,7 +558,7 @@ export default function BangaloreAcademy() {
                       </svg>
                     </span>
                     <p className="text-white/70 text-sm leading-relaxed">
-                      Others observe, learn &amp; gain valuable insights from the session
+                      Others experience driving in lower gears
                     </p>
                   </div>
                 </div>
