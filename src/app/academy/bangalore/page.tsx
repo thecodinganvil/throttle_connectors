@@ -632,7 +632,7 @@ export default function BangaloreAcademy() {
                   </h3>
                   <p className="text-white/60 text-sm sm:text-base leading-relaxed max-w-lg">
                     Secure your spot today by paying a booking amount of <span className="text-white/80 font-medium">₹5000</span>. 
-                    The remaining balance is due 1 week before the academy starts.
+                    The remaining balance is due 3 days before the academy starts.
                   </p>
                 </div>
               </div>
