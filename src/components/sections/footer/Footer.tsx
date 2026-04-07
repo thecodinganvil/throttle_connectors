@@ -44,6 +44,12 @@ export default function Footer() {
               >
                 Academy
               </Link>
+              <Link
+                href="/academy/previous_academies"
+                className="font-[family-name:var(--font-bebas)] text-cyan text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+              >
+                Previous Academies
+              </Link>
             </div>
           </div>
 

@@ -403,6 +403,38 @@ export default function AcademyPage() {
             </div>
           ))}
         </div>
+
+        {/* ── Previous Academies Link ── */}
+        <div className="mt-12 sm:mt-16">
+          <hr className="border-0 h-[1px] bg-white/[0.06] mb-10" />
+          <div className="flex items-center gap-3 mb-6">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+            </span>
+            <span className="text-xs font-medium tracking-[0.22em] uppercase text-white/40">
+              Archive
+            </span>
+          </div>
+          <Link href="/academy/previous_academies"
+            className="group flex items-center justify-between w-full bg-[#0e0e0e] border border-white/[0.08] hover:border-cyan/25 rounded-2xl px-6 sm:px-8 py-5 sm:py-6 transition-all duration-400">
+            <div>
+              <h3 className="font-[family-name:var(--font-bebas)] text-white group-hover:text-cyan text-2xl sm:text-3xl md:text-4xl tracking-wide transition-colors duration-300">
+                PREVIOUS ACADEMIES
+              </h3>
+              <p className="text-white/30 text-xs sm:text-sm tracking-wider mt-1">
+                Hyderabad · Bangalore · Formula 1300
+              </p>
+            </div>
+            <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 group-hover:border-cyan/40 group-hover:bg-cyan/10 flex items-center justify-center transition-all duration-300">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                className="text-white/50 group-hover:text-cyan transition-colors duration-300 group-hover:translate-x-0.5 transition-transform">
+                <path d="M5 12h14m-7-7 7 7-7 7" />
+              </svg>
+            </div>
+          </Link>
+        </div>
       </main>
 
       {/* ═══════ FOOTER ═══════ */}
@@ -444,6 +476,12 @@ export default function AcademyPage() {
                   className="font-[family-name:var(--font-bebas)] text-white text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
                 >
                   Academy
+                </Link>
+                <Link
+                  href="/academy/previous_academies"
+                  className="font-[family-name:var(--font-bebas)] text-cyan text-base sm:text-lg tracking-wide uppercase hover:opacity-50 transition-opacity"
+                >
+                  Previous Academies
                 </Link>
               </div>
             </div>
