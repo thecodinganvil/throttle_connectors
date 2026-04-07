@@ -9,6 +9,7 @@ import SocialIcons from "../shared/SocialIcons";
 const NAV_LINKS = [
   { label: "About Us", href: "#about" },
   { label: "Academy", href: "/academy" },
+  { label: "Previous Academies", href: "/academy/previous_academies", accent: true },
 ];
 
 export default function Navbar() {
@@ -96,7 +97,7 @@ export default function Navbar() {
         <div className="grid grid-cols-1 md:grid-cols-2 w-full h-full">
           {/* Left Column: Links */}
           <div className="flex flex-col justify-center px-10 md:px-20 py-20">
-            <nav className="flex flex-col gap-6">
+            <nav className="flex flex-col gap-4 sm:gap-6">
               {NAV_LINKS.map((link, i) => (
                 <a
                   key={link.href}
@@ -104,7 +105,9 @@ export default function Navbar() {
                     linkRefs.current[i] = el;
                   }}
                   href={link.href}
-                  className="menu-link-large"
+                  className={`menu-link-large ${
+                    link.accent ? "!text-cyan/70 hover:!text-cyan" : ""
+                  }`}
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
@@ -156,7 +159,7 @@ export default function Navbar() {
 
           {/* Centered nav pills (Hidden when menu is open) */}
           <nav
-            className={`hidden items-center gap-4 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${
+            className={`hidden items-center gap-3 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${
               menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"
             }`}
           >
@@ -165,6 +168,9 @@ export default function Navbar() {
             </a>
             <Link href="/academy" className="nav-pill">
               Academy
+            </Link>
+            <Link href="/academy/previous_academies" className="nav-pill" style={{borderColor: "rgba(89,224,247,0.35)", color: "rgba(89,224,247,0.85)"}}>
+              Previous Academies
             </Link>
           </nav>
 
