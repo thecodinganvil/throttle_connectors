@@ -9,7 +9,7 @@ import gsap from "gsap";
 const NAV_LINKS = [
   { label: "About Us", href: "/#about" },
   { label: "Academy", href: "/academy" },
-  { label: "Previous Academies", href: "/academy/previous_academies", accent: true },
+  { label: "Previous Academies", href: "/academy/previous_academies" },
 ];
 
 /* ─── Data ─────────────────────────────────── */
@@ -343,7 +343,7 @@ export default function PreviousAcademies() {
               {NAV_LINKS.map((link, i) => (
                 <a key={link.href} ref={(el) => { linkRefs.current[i] = el; }}
                   href={link.href}
-                  className={`menu-link-large ${link.accent ? "!text-cyan/70 hover:!text-cyan" : ""}`}
+                  className="menu-link-large"
                   onClick={() => setMenuOpen(false)}>
                   {link.label}
                 </a>
@@ -369,7 +369,7 @@ export default function PreviousAcademies() {
           <nav className={`hidden items-center gap-3 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             <Link href="/#about" className="nav-pill">About Us</Link>
             <Link href="/academy" className="nav-pill">Academy</Link>
-            <Link href="/academy/previous_academies" className="nav-pill" style={{ borderColor: "rgba(89,224,247,0.35)", color: "rgba(89,224,247,0.9)" }}>
+            <Link href="/academy/previous_academies" className="nav-pill nav-pill-active">
               Previous Academies
             </Link>
           </nav>
@@ -413,7 +413,7 @@ export default function PreviousAcademies() {
           {/* Header */}
           <div className="flex flex-wrap items-end justify-between gap-4 mb-5">
             <div>
-              <SectionDots label="Location 01" />
+              <SectionDots label="" />
               <div className="flex flex-wrap items-baseline gap-3 mt-3">
                 <h2 className="font-[family-name:var(--font-bebas)] text-white text-3xl sm:text-4xl md:text-5xl tracking-tight leading-none">
                   HYDERABAD
@@ -469,7 +469,7 @@ export default function PreviousAcademies() {
         <section className="pa-block mb-14 sm:mb-16">
           <div className="flex flex-wrap items-end justify-between gap-4 mb-5">
             <div>
-              <SectionDots label="Location 02 · Session 1" />
+              <SectionDots label="" />
               <div className="flex flex-wrap items-baseline gap-3 mt-3">
                 <h2 className="font-[family-name:var(--font-bebas)] text-white text-3xl sm:text-4xl md:text-5xl tracking-tight leading-none">
                   BANGALORE
@@ -518,7 +518,7 @@ export default function PreviousAcademies() {
         <section className="pa-block">
           <div className="flex flex-wrap items-end justify-between gap-4 mb-5">
             <div>
-              <SectionDots label="Location 02 · Session 2" />
+              <SectionDots label="" />
               <div className="flex flex-wrap items-baseline gap-3 mt-3">
                 <h2 className="font-[family-name:var(--font-bebas)] text-white text-3xl sm:text-4xl md:text-5xl tracking-tight leading-none">
                   BANGALORE

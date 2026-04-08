@@ -9,7 +9,7 @@ import SocialIcons from "../shared/SocialIcons";
 const NAV_LINKS = [
   { label: "About Us", href: "#about" },
   { label: "Academy", href: "/academy" },
-  { label: "Previous Academies", href: "/academy/previous_academies", accent: true },
+  { label: "Previous Academies", href: "/academy/previous_academies" },
 ];
 
 export default function Navbar() {
@@ -105,9 +105,7 @@ export default function Navbar() {
                     linkRefs.current[i] = el;
                   }}
                   href={link.href}
-                  className={`menu-link-large ${
-                    link.accent ? "!text-cyan/70 hover:!text-cyan" : ""
-                  }`}
+                  className="menu-link-large"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
@@ -169,7 +167,7 @@ export default function Navbar() {
             <Link href="/academy" className="nav-pill">
               Academy
             </Link>
-            <Link href="/academy/previous_academies" className="nav-pill" style={{borderColor: "rgba(89,224,247,0.35)", color: "rgba(89,224,247,0.85)"}}>
+            <Link href="/academy/previous_academies" className="nav-pill">
               Previous Academies
             </Link>
           </nav>

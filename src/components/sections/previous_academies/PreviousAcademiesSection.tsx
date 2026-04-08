@@ -3,14 +3,39 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const PREVIEW_IMAGES = [
-  { src: "/assets/previous_academies/hyderabad_31_1.jpeg", alt: "Hyderabad Karting Academy" },
-  { src: "/assets/previous_academies/banglore_1300_1.jpeg", alt: "Bangalore Formula 1300" },
-  { src: "/assets/previous_academies/banglore_1300_3.jpeg", alt: "Formula 1300 on track" },
-  { src: "/assets/previous_academies/bangalore_56_1.jpeg", alt: "Bangalore Karting" },
-  { src: "/assets/previous_academies/hyderabad_31_2.jpeg", alt: "Hyderabad track action" },
-  { src: "/assets/previous_academies/banglore_1300_5.jpeg", alt: "Formula 1300 pit lane" },
+/* ── Academy data with compact descriptions ── */
+const ACADEMIES = [
+  {
+    title: "HYDERABAD",
+    subtitle: "KARTING ACADEMY",
+    date: "30–31 March",
+    venue: "Tspeedway, Hyderabad",
+    description:
+      "Two days of high-speed karting — professional coaching, timed laps, and competitive racing at one of South India's premier tracks.",
+    image: "/assets/previous_academies/hyderabad_31_1.jpeg",
+  },
+  {
+    title: "BANGALORE",
+    subtitle: "FORMULA 1300 ACADEMY",
+    date: "2–3 April",
+    venue: "Red Riders, Bangalore",
+    description:
+      "An exclusive Formula 1300 open-wheel experience — cockpit sessions, on-track driving, and pro-level race craft in a real single-seater.",
+    image: "/assets/previous_academies/banglore_1300_1.jpeg",
+    badge: "FORMULA 1300",
+  },
+  {
+    title: "BANGALORE",
+    subtitle: "KARTING ACADEMY",
+    date: "5–6 January",
+    venue: "Red Riders, Bangalore",
+    description:
+      "Intense karting boot camp — race technique, data-driven improvement, and wheel-to-wheel battles across two action-packed days.",
+    image: "/assets/previous_academies/bangalore_56_1.jpeg",
+  },
 ];
+
+
 
 export default function PreviousAcademiesSection() {
   return (
@@ -57,43 +82,75 @@ export default function PreviousAcademiesSection() {
         </Link>
       </div>
 
-      {/* ── Photo Mosaic ── */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 mb-8 sm:mb-10">
-        {PREVIEW_IMAGES.map((img, i) => (
+
+      {/* ── Compact Academy Cards ── */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mb-10 sm:mb-12">
+        {ACADEMIES.map((academy, i) => (
           <Link
             key={i}
             href="/academy/previous_academies"
-            className={`relative overflow-hidden rounded-xl bg-[#111111] group block ${
-              i === 0 ? "col-span-2 sm:col-span-1 row-span-2 aspect-[4/5]" :
-              i === 1 ? "aspect-[4/3]" :
-              "aspect-[4/3]"
-            }`}
+            className="group relative bg-[#111111] border border-white/[0.06] hover:border-cyan/20 rounded-2xl overflow-hidden transition-all duration-400"
           >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              sizes="(max-width: 640px) 50vw, 33vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            {/* Thumbnail */}
+            <div className="relative w-full aspect-[16/9] overflow-hidden">
+              <Image
+                src={academy.image}
+                alt={academy.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-black/20 to-transparent" />
+              {/* Badge */}
+              {academy.badge && (
+                <span className="absolute top-3 right-3 bg-cyan text-black text-[9px] font-bold tracking-widest uppercase rounded-full px-2.5 py-0.5">
+                  {academy.badge}
+                </span>
+              )}
+            </div>
+
+            {/* Content */}
+            <div className="px-4 pb-4 pt-2 sm:px-5 sm:pb-5 sm:pt-3">
+              <div className="flex items-baseline gap-2 mb-1.5">
+                <h3 className="font-[family-name:var(--font-bebas)] text-white group-hover:text-cyan text-lg sm:text-xl tracking-wide leading-none transition-colors duration-300">
+                  {academy.title}
+                </h3>
+                <span className="font-[family-name:var(--font-bebas)] text-cyan/50 text-xs sm:text-sm tracking-wide">
+                  {academy.subtitle}
+                </span>
+              </div>
+
+              {/* Meta pills */}
+              <div className="flex items-center gap-2 mb-2.5">
+                <span className="inline-flex items-center gap-1 text-white/30 text-[10px] tracking-wider">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan/50 flex-shrink-0">
+                    <rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
+                  {academy.date}
+                </span>
+                <span className="text-white/10">·</span>
+                <span className="inline-flex items-center gap-1 text-white/30 text-[10px] tracking-wider">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan/50 flex-shrink-0">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+                  </svg>
+                  {academy.venue}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-white/30 text-[11px] sm:text-xs leading-relaxed line-clamp-2">
+                {academy.description}
+              </p>
+            </div>
           </Link>
         ))}
       </div>
 
       {/* ── CTA row ── */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 pt-5 border-t border-white/[0.06]">
-        <div>
-          <p className="text-white/50 text-sm sm:text-base">
-            <span className="text-cyan font-medium">3 academies</span>
-            {" "}completed · {" "}
-            <span className="text-cyan font-medium">14 photos</span>
-            {" "}across Hyderabad & Bangalore
-          </p>
-        </div>
         <Link href="/academy/previous_academies" className="cta-button group flex-shrink-0">
           <span className="text-sm sm:text-base font-medium tracking-wide z-10">
-            Explore Gallery
+            Explore Previous Academies
           </span>
           <span className="cta-icon-wrapper">
             <svg className="cta-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
