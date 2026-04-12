@@ -452,7 +452,7 @@ export default function BangaloreAcademy() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-8 md:px-12 lg:px-20 flex items-center justify-between gap-3 pointer-events-auto">
           <div className="hidden sm:flex flex-col">
             <span className="font-[family-name:var(--font-bebas)] text-white text-lg tracking-wide">SUMMER MOTORSPORT CAMP</span>
-            <span className="text-white/40 text-xs">Starting from <span className="text-cyan font-semibold">₹15,999</span> · 17–19 May</span>
+            <span className="text-white/40 text-xs">Starting from <span className="text-cyan font-semibold">₹15,999</span> · 18-20 May</span>
           </div>
           <div className="w-full sm:w-auto bg-white/10 border border-white/20 text-white/60 font-bold text-xs sm:text-sm md:text-base tracking-wide px-4 py-3 sm:px-8 sm:py-4 rounded-full flex items-center justify-center gap-2 cursor-not-allowed select-none">
             <span>Registration Opening Soon</span>
