@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -198,6 +199,7 @@ export default function RootLayout({
       </head>
       <body className={`${bebasNeue.variable} ${inter.variable} antialiased`}>
         {children}
+        <Analytics />
 
         {/* Floating WhatsApp Button */}
         <a
