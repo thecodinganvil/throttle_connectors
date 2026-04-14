@@ -6,7 +6,28 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 
 /* ── Academy program data ── */
-const PROGRAMS = [
+type AcademyProgram = {
+  city: string;
+  slug: string;
+  title: string;
+  status: string;
+  location: string;
+  image: string;
+  heading?: string;
+  isNew?: boolean;
+};
+
+const PROGRAMS: AcademyProgram[] = [
+  {
+    city: "BANGALORE",
+    slug: "bangalore",
+    title: "KARTING & FORMULA CAR ACADEMY",
+    status: "18 – 20 May",
+    location: "Red Riders Go Karting, Bangalore",
+    image: "/assets/bangalore_academy_banner.jpeg",
+    heading: "BANGALORE ACADEMY",
+    isNew: true,
+  },
   {
     city: "HYDERABAD",
     slug: "hyderabad",
@@ -14,15 +35,6 @@ const PROGRAMS = [
     status: "30–31 March",
     location: "Tspeedway, Hyderabad",
     image: "/assets/hyderabad.jpeg",
-  },
-  {
-    city: "BANGALORE",
-    slug: "bangalore",
-    title: "KARTING & FORMULA CAR ACADEMY",
-    status: "2 & 3 April",
-    location: "Red Riders Go Karting, Bangalore",
-    image: "/assets/bangalore.jpeg",
-    heading: "BANGALORE ACADEMY",
   },
   {
     city: "COIMBATORE",
@@ -355,6 +367,13 @@ export default function AcademyPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    
+                    {/* New Badge */}
+                    {program.isNew && (
+                      <div className="absolute top-4 right-4 bg-cyan text-black font-[family-name:var(--font-bebas)] px-3 py-1 text-sm md:text-base rounded shadow-[0_0_15px_rgba(0,255,255,0.3)] tracking-widest z-10 flex items-center gap-1">
+                        NEW
+                      </div>
+                    )}
                   </div>
 
                   {/* Content Section */}
