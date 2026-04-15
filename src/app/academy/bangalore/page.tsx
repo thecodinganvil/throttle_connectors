@@ -419,6 +419,29 @@ export default function BangaloreAcademy() {
               </span>
               <span className="text-sm font-medium tracking-[0.2em] uppercase text-white/70">Contact &amp; Registration</span>
             </div>
+            <div className="rounded-xl border border-white/10 bg-black/30 p-5 sm:p-6 mb-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                </span>
+                <span className="text-xs font-medium tracking-[0.2em] uppercase text-white/60">Registration</span>
+              </div>
+              <div className="space-y-3 text-white/70 text-sm sm:text-base leading-relaxed">
+                <p>
+                  For registration, please click on <span className="text-white font-medium">&quot;Registrations&quot;</span>, fill out the Google Form, and complete the payment.
+                </p>
+                <p>
+                  After making the payment, kindly send us a screenshot on WhatsApp for seat confirmation.
+                </p>
+                <p>
+                  Banking name - <span className="text-white font-semibold tracking-wide">VASU ENTERPRISES</span>
+                </p>
+                <p>
+                  Please checkout this name before making payment.
+                </p>
+              </div>
+            </div>
             <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-[#132c2c] to-[#111111] border border-cyan/30 p-6 sm:p-8 mb-8 shadow-[0_0_30px_rgba(0,255,255,0.08)] hover:shadow-[0_0_40px_rgba(0,255,255,0.15)] transition-all duration-500 group">
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan/10 blur-[50px] rounded-full pointer-events-none group-hover:bg-cyan/20 transition-colors duration-500" />
               <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-cyan via-cyan/50 to-transparent" />
