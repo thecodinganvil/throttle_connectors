@@ -144,7 +144,7 @@ export default function BangaloreAcademy() {
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
             <rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
           </svg>
-          18–20 MAY {`·`} 3-DAY MOTORSPORT EXPERIENCE
+          18–19 MAY {`·`} 2-DAY MOTORSPORT EXPERIENCE
         </p>
 
         {/* ── Hero Banner ── */}
@@ -185,14 +185,10 @@ export default function BangaloreAcademy() {
             <div className="space-y-4">
               <div className="flex items-start gap-2 text-white/80 text-sm sm:text-base">
                 <span className="text-cyan font-semibold flex-shrink-0">01 –</span>
-                <span>2 Days of Professional Karting Training</span>
+                <span>2 days of training + race competition</span>
               </div>
               <div className="flex items-start gap-2 text-white/80 text-sm sm:text-base">
                 <span className="text-cyan font-semibold flex-shrink-0">02 –</span>
-                <span>1 Day Competitive Race Event</span>
-              </div>
-              <div className="flex items-start gap-2 text-white/80 text-sm sm:text-base">
-                <span className="text-cyan font-semibold flex-shrink-0">03 –</span>
                 <span>Top performers will be awarded <span className="text-cyan font-semibold">cash prizes</span></span>
               </div>
             </div>
@@ -211,22 +207,22 @@ export default function BangaloreAcademy() {
             </div>
             <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-white/[0.08]">
               <p className="text-white/40 text-xs tracking-widest uppercase mb-2">Duration</p>
-              <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">3-Day Camp</p>
+              <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">2-Day Camp</p>
             </div>
             <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-cyan/20">
               <p className="text-white/40 text-xs tracking-widest uppercase mb-2">Dates</p>
-              <p className="font-[family-name:var(--font-bebas)] text-cyan text-lg sm:text-xl tracking-wide">18–20 May</p>
+              <p className="font-[family-name:var(--font-bebas)] text-cyan text-lg sm:text-xl tracking-wide">18–19 May</p>
             </div>
             <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-cyan/20">
               <p className="text-white/40 text-xs tracking-widest uppercase mb-3">Pricing</p>
               <div className="space-y-2">
                 <div>
                   <p className="text-white/60 text-xs tracking-wide">Early Bird</p>
-                  <p className="font-[family-name:var(--font-bebas)] text-cyan text-lg sm:text-xl tracking-wide">₹15,999</p>
+                  <p className="font-[family-name:var(--font-bebas)] text-cyan text-lg sm:text-xl tracking-wide">₹14,999</p>
                 </div>
                 <div className="border-t border-white/10 pt-2">
                   <p className="text-white/60 text-xs tracking-wide">Normal Price</p>
-                  <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">₹16,999</p>
+                  <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">₹15,999</p>
                 </div>
               </div>
               <p className="text-white/40 text-xs mt-3">Only <span className="text-cyan">10 seats</span> available</p>
@@ -260,13 +256,13 @@ export default function BangaloreAcademy() {
               WHAT YOU&apos;LL EXPERIENCE
             </h2>
 
-            {/* Day 1 & 2 – Training Phase */}
+            {/* Day 1 – Training Phase */}
             <div className="bg-[#111111] rounded-2xl p-6 sm:p-8 border border-white/[0.08] mb-8 md:mb-12">
               <div className="flex items-center gap-3 mb-2">
                 <span className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl leading-none">01</span>
                 <div>
-                  <p className="text-white/40 text-xs tracking-widest uppercase">Days</p>
-                  <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">Day 1 &amp; 2 – Training Phase</p>
+                  <p className="text-white/40 text-xs tracking-widest uppercase">Day</p>
+                  <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">Day 1 – Training Phase</p>
                 </div>
               </div>
               <p className="text-white/40 text-xs mb-6 mt-1">Track: Red Riders Go Karting, Bangalore</p>
@@ -293,18 +289,18 @@ export default function BangaloreAcademy() {
               <Image src="/assets/new_bangalore_academy5.jpeg" alt="Race grid – Summer Motorsport Camp Bangalore" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <div className="absolute bottom-5 left-5 sm:bottom-8 sm:left-8">
-                <p className="text-white/50 text-xs tracking-[0.25em] uppercase mb-1">Day 3</p>
-                <p className="font-[family-name:var(--font-bebas)] text-cyan text-2xl sm:text-4xl tracking-wide">Final Race Event</p>
+                <p className="text-white/50 text-xs tracking-[0.25em] uppercase mb-1">Day 2</p>
+                <p className="font-[family-name:var(--font-bebas)] text-cyan text-2xl sm:text-4xl tracking-wide">Final Race Event at new track</p>
               </div>
             </div>
 
-            {/* Day 3 – Race Event */}
+            {/* Day 2 – Race Event */}
             <div className="bg-gradient-to-br from-[#111111] to-[#0d1a1a] rounded-2xl p-6 sm:p-8 border border-cyan/20">
               <div className="flex items-center gap-3 mb-6">
                 <span className="font-[family-name:var(--font-bebas)] text-cyan text-5xl sm:text-6xl leading-none">02</span>
                 <div>
                   <p className="text-white/40 text-xs tracking-widest uppercase">Day</p>
-                  <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">Day 3 – Final Race Event</p>
+                  <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">Day 2 – Final Race Event at new track</p>
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -383,12 +379,12 @@ export default function BangaloreAcademy() {
                   Early Bird
                 </div>
                 <p className="text-white/40 text-xs tracking-widest uppercase mb-3">Limited Time Offer</p>
-                <p className="font-[family-name:var(--font-bebas)] text-cyan text-4xl sm:text-5xl tracking-wide mb-2">₹15,999</p>
+                <p className="font-[family-name:var(--font-bebas)] text-cyan text-4xl sm:text-5xl tracking-wide mb-2">₹14,999</p>
                 <p className="text-white/50 text-sm">Grab this special pricing now</p>
               </div>
               <div className="bg-[#111111] rounded-2xl p-6 sm:p-8 border border-white/[0.08]">
                 <p className="text-white/40 text-xs tracking-widest uppercase mb-3">Standard Rate</p>
-                <p className="font-[family-name:var(--font-bebas)] text-white text-4xl sm:text-5xl tracking-wide mb-2">₹16,999</p>
+                <p className="font-[family-name:var(--font-bebas)] text-white text-4xl sm:text-5xl tracking-wide mb-2">₹15,999</p>
                 <p className="text-white/50 text-sm">Regular pricing after early bird</p>
               </div>
             </div>
@@ -475,7 +471,7 @@ export default function BangaloreAcademy() {
             </p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxhUox0RPxsFnJI5eIt3Nd5pCAZD6QJhM9dK0VKvlZ5eQjLw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" className="cta-button group inline-flex mx-auto hover:opacity-100 transition-opacity">
               <span className="text-sm sm:text-base font-medium tracking-wide z-10">
-                Register Now – ₹15,999
+                Register Now – ₹14,999
               </span>
               <span className="cta-icon-wrapper">
                 <svg className="cta-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -492,7 +488,7 @@ export default function BangaloreAcademy() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-8 md:px-12 lg:px-20 flex items-center justify-between gap-3 pointer-events-auto">
           <div className="hidden sm:flex flex-col">
             <span className="font-[family-name:var(--font-bebas)] text-white text-lg tracking-wide">SUMMER MOTORSPORT CAMP</span>
-            <span className="text-white/40 text-xs">Early Bird <span className="text-cyan font-semibold">₹15,999</span> · Normal <span className="text-cyan font-semibold">₹16,999</span> · 18-20 May</span>
+            <span className="text-white/40 text-xs">Early Bird <span className="text-cyan font-semibold">₹14,999</span> · Normal <span className="text-cyan font-semibold">₹15,999</span> · 18-19 May</span>
           </div>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxhUox0RPxsFnJI5eIt3Nd5pCAZD6QJhM9dK0VKvlZ5eQjLw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-cyan text-black font-bold text-xs sm:text-sm md:text-base tracking-wide px-4 py-3 sm:px-8 sm:py-4 rounded-full flex items-center justify-center gap-2 hover:bg-cyan/90 transition-colors">
             <span>Register Now</span>

@@ -19,7 +19,7 @@ const ACADEMY_PROGRAMS: AcademyProgram[] = [
     city: "BANGALORE",
     slug: "bangalore",
     title: "KARTING & FORMULA CAR ACADEMY",
-    status: "18 – 20 May",
+    status: "18 – 19 May",
     location: "Red Riders Go Karting, Bangalore",
     image: "/assets/bangalore_academy_banner.jpeg",
     heading: "BANGALORE ACADEMY",
