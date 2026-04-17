@@ -31,10 +31,12 @@ const PROGRAMS: AcademyProgram[] = [
   {
     city: "HYDERABAD",
     slug: "hyderabad",
-    title: "KARTING ACADEMY",
-    status: "30–31 March",
+    title: "MOTORSPORT ACADEMY",
+    status: "13–14 May",
     location: "Tspeedway, Hyderabad",
-    image: "/assets/hyderabad.jpeg",
+    image: "/assets/hyderabad_academy_banner.jpeg",
+    heading: "HYDERABAD MOTORSPORT ACADEMY",
+    isNew: true,
   },
   {
     city: "COIMBATORE",

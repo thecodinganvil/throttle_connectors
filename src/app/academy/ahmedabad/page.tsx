@@ -8,6 +8,7 @@ import gsap from "gsap";
 const NAV_LINKS = [
   { label: "About Us", href: "/#about" },
   { label: "Academy", href: "/academy" },
+  { label: "Previous Academies", href: "/academy/previous_academies" },
 ];
 
 export default function AhmedabadAcademy() {
@@ -218,6 +219,9 @@ export default function AhmedabadAcademy() {
             </Link>
             <Link href="/academy" className="nav-pill nav-pill-active">
               Academy
+            </Link>
+            <Link href="/academy/previous_academies" className="nav-pill">
+              Previous Academies
             </Link>
           </nav>
           <button

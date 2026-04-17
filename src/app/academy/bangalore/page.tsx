@@ -8,6 +8,7 @@ import gsap from "gsap";
 const NAV_LINKS = [
   { label: "About Us", href: "/#about" },
   { label: "Academy", href: "/academy" },
+  { label: "Previous Academies", href: "/academy/previous_academies" },
 ];
 
 export default function BangaloreAcademy() {
@@ -113,6 +114,7 @@ export default function BangaloreAcademy() {
           <nav className={`hidden items-center gap-4 md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             <Link href="/#about" className="nav-pill">About Us</Link>
             <Link href="/academy" className="nav-pill nav-pill-active">Academy</Link>
+            <Link href="/academy/previous_academies" className="nav-pill">Previous Academies</Link>
           </nav>
           <button aria-label={menuOpen ? "Close menu" : "Open menu"} className={`hamburger-btn z-[70] flex items-center gap-3 ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
             {menuOpen && <span className="text-white text-sm font-medium tracking-widest uppercase opacity-80">Close</span>}
