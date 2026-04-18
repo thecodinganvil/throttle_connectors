@@ -215,11 +215,7 @@ export default function HyderabadAcademy() {
           </div>
 
           {/* ── Quick Info Cards ── */}
-          <div className="grid grid-cols-1 min-[400px]:grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
-            <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-white/[0.08]">
-              <p className="text-white/40 text-xs tracking-widest uppercase mb-2">Venue</p>
-              <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">Tspeedway, Hyderabad</p>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-16 sm:mb-20">
             <div className="bg-[#111111] rounded-xl p-5 sm:p-6 border border-white/[0.08]">
               <p className="text-white/40 text-xs tracking-widest uppercase mb-2">Duration</p>
               <p className="font-[family-name:var(--font-bebas)] text-white text-lg sm:text-xl tracking-wide">2-Day Program</p>
@@ -282,8 +278,7 @@ export default function HyderabadAcademy() {
                   <p className="font-[family-name:var(--font-bebas)] text-white text-xl tracking-wide">Day 1 – Level 1 Training Phase</p>
                 </div>
               </div>
-              <p className="text-white/40 text-xs mb-6 mt-1">Venue: Tspeedway, Hyderabad</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mt-6">
                 {[
                   "Racing lines & track awareness",
                   "Braking techniques & vehicle control",
@@ -539,16 +534,16 @@ export default function HyderabadAcademy() {
               Limited batch size — early booking recommended
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <div className="cta-button group inline-flex mx-auto cursor-default opacity-90">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSehzmnVp0bjYi22LYPkm5LtVQUVUkLMu-e_CEwXXh7LF6bnTA/viewform?usp=sharing&ouid=103227866571867806365" target="_blank" rel="noopener noreferrer" className="cta-button group inline-flex mx-auto">
                 <span className="text-sm sm:text-base font-medium tracking-wide z-10">
-                  Registrations Will Open Soon
+                  Register Now
                 </span>
                 <span className="cta-icon-wrapper">
                   <svg className="cta-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                    <path d="M5 12h14m-7-7 7 7-7 7" />
                   </svg>
                 </span>
-              </div>
+              </a>
               <a href="https://wa.me/918467042523" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#111111] border border-white/[0.08] text-white/80 hover:text-cyan hover:border-cyan/30 font-medium text-sm tracking-wide px-6 py-3 rounded-full transition-all duration-300">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
@@ -567,12 +562,12 @@ export default function HyderabadAcademy() {
             <span className="font-[family-name:var(--font-bebas)] text-white text-lg tracking-wide">HYDERABAD MOTORSPORT ACADEMY</span>
             <span className="text-white/40 text-xs">Early Bird <span className="text-cyan font-semibold">₹13,499</span> · Regular <span className="text-cyan font-semibold">₹15,000</span> · 13–14 May</span>
           </div>
-          <div className="w-full sm:w-auto bg-cyan text-black font-bold text-xs sm:text-sm md:text-base tracking-wide px-4 py-3 sm:px-8 sm:py-4 rounded-full flex items-center justify-center gap-2 cursor-default">
-            <span>Registrations Will Open Soon</span>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSehzmnVp0bjYi22LYPkm5LtVQUVUkLMu-e_CEwXXh7LF6bnTA/viewform?usp=sharing&ouid=103227866571867806365" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-cyan text-black font-bold hover:bg-white text-xs sm:text-sm md:text-base tracking-wide px-4 py-3 sm:px-8 sm:py-4 rounded-full flex items-center justify-center gap-2 transition-colors duration-300">
+            <span>Register Now</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="5 12 19 12"></polyline><polyline points="12 5 19 12 12 19"></polyline>
+              <path d="M5 12h14m-7-7 7 7-7 7" />
             </svg>
-          </div>
+          </a>
         </div>
       </div>
 

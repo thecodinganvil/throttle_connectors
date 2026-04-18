@@ -11,7 +11,7 @@ type AcademyProgram = {
   slug: string;
   title: string;
   status: string;
-  location: string;
+  location?: string;
   image: string;
   heading?: string;
   isNew?: boolean;
@@ -32,8 +32,7 @@ const PROGRAMS: AcademyProgram[] = [
     city: "HYDERABAD",
     slug: "hyderabad",
     title: "MOTORSPORT ACADEMY",
-    status: "13–14 May",
-    location: "Tspeedway, Hyderabad",
+    status: "13–14 May",    
     image: "/assets/hyderabad_academy_banner.jpeg",
     heading: "HYDERABAD MOTORSPORT ACADEMY",
     isNew: true,
@@ -385,23 +384,25 @@ export default function AcademyPage() {
                         <h3 className="font-[family-name:var(--font-bebas)] text-cyan group-hover:text-black text-xl sm:text-2xl md:text-3xl tracking-wide transition-colors duration-500">
                           {program.heading ?? `${program.city} ACADEMY`}
                         </h3>
-                        <p className="font-[family-name:var(--font-bebas)] text-cyan/50 group-hover:text-black/50 text-base sm:text-lg md:text-xl tracking-wide flex items-center gap-1.5 transition-colors duration-500">
-                          <svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="flex-shrink-0"
-                          >
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                            <circle cx="12" cy="10" r="3" />
-                          </svg>
-                          {program.location}
-                        </p>
+                        {program.location && (
+                          <p className="font-[family-name:var(--font-bebas)] text-cyan/50 group-hover:text-black/50 text-base sm:text-lg md:text-xl tracking-wide flex items-center gap-1.5 transition-colors duration-500">
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="flex-shrink-0"
+                            >
+                              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                              <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            {program.location}
+                          </p>
+                        )}
                         <p className="text-white/30 group-hover:text-black/30 text-xs mt-0.5 transition-colors duration-500">
                           {program.status}
                         </p>
