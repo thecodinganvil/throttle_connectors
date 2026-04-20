@@ -139,92 +139,26 @@ function Lightbox({ images, startIndex, onClose }: LightboxProps) {
   );
 }
 
-/* ─── Compact Bento Collage ─────────────────── */
-interface CollageProps {
-  images: { src: string; alt: string }[];
-  onOpen: (index: number) => void;
-}
-
-function BentoCollage({ images, onOpen }: CollageProps) {
-  if (images.length === 0) return null;
-
-  // Layout patterns based on count
-  if (images.length === 1) {
-    return (
-      <div className="grid grid-cols-1 gap-2">
-        <CollageCell image={images[0]} index={0} aspect="aspect-[16/9]" span="" onOpen={onOpen} />
-      </div>
-    );
-  }
-
-  if (images.length === 2) {
-    return (
-      <div className="grid grid-cols-2 gap-2">
-        {images.map((img, i) => (
-          <CollageCell key={i} image={img} index={i} aspect="aspect-[4/3]" span="" onOpen={onOpen} />
-        ))}
-      </div>
-    );
-  }
-
-  if (images.length === 3) {
-    return (
-      <div className="grid grid-cols-3 gap-2">
-        <div className="col-span-2">
-          <CollageCell image={images[0]} index={0} aspect="aspect-[16/10]" span="" onOpen={onOpen} />
-        </div>
-        <div className="col-span-1 flex flex-col gap-2">
-          <CollageCell image={images[1]} index={1} aspect="aspect-square" span="" onOpen={onOpen} />
-          <CollageCell image={images[2]} index={2} aspect="aspect-square" span="" onOpen={onOpen} />
-        </div>
-      </div>
-    );
-  }
-
-  if (images.length === 4) {
-    return (
-      <div className="grid grid-cols-2 gap-2">
-        <div className="col-span-2">
-          <CollageCell image={images[0]} index={0} aspect="aspect-[21/9]" span="" onOpen={onOpen} />
-        </div>
-        <CollageCell image={images[1]} index={1} aspect="aspect-[4/3]" span="" onOpen={onOpen} />
-        <CollageCell image={images[2]} index={2} aspect="aspect-[4/3]" span="" onOpen={onOpen} />
-      </div>
-    );
-  }
-
-  // 5 or 6 images — bento layout
-  const rest = images.slice(3);
-  return (
-    <div className="grid grid-cols-3 gap-2">
-      {/* Top row: hero left + 2 stacked right */}
-      <div className="col-span-2 row-span-2">
-        <CollageCell image={images[0]} index={0} aspect="aspect-square" span="" onOpen={onOpen} />
-      </div>
-      <CollageCell image={images[1]} index={1} aspect="aspect-[4/3]" span="" onOpen={onOpen} />
-      <CollageCell image={images[2]} index={2} aspect="aspect-[4/3]" span="" onOpen={onOpen} />
-      {/* Bottom row */}
-      {rest.map((img, i) => (
-        <CollageCell key={i + 3} image={img} index={i + 3} aspect="aspect-[4/3]" span="" onOpen={onOpen} />
-      ))}
-    </div>
-  );
-}
-
-interface CollageCellProps {
+/* ─── Collage cell — has NO aspect ratio, lives in a fixed-height grid ── */
+function CollageCell({
+  image,
+  index,
+  onOpen,
+  gridRow,
+  gridColumn,
+}: {
   image: { src: string; alt: string };
   index: number;
-  aspect: string;
-  span: string;
-  onOpen: (index: number) => void;
-}
-
-function CollageCell({ image, index, aspect, onOpen }: CollageCellProps) {
+  onOpen: (i: number) => void;
+  gridRow?: string;
+  gridColumn?: string;
+}) {
   return (
     <button
       onClick={() => onOpen(index)}
-      className={`block relative ${aspect} w-full rounded-lg overflow-hidden bg-[#111111] group cursor-zoom-in`}
+      className="relative w-full h-full rounded-lg overflow-hidden bg-[#111111] group cursor-zoom-in"
       aria-label={`View photo ${index + 1}`}
+      style={{ gridRow, gridColumn }}
     >
       <Image
         src={image.src}
@@ -233,15 +167,108 @@ function CollageCell({ image, index, aspect, onOpen }: CollageCellProps) {
         sizes="(max-width: 640px) 50vw, 33vw"
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      {/* Hover overlay */}
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300 flex items-center justify-center">
-        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-9 h-9 rounded-full bg-black/50 border border-white/30 flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-9 h-9 rounded-full bg-black/60 border border-white/30 flex items-center justify-center">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /><line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" />
           </svg>
         </div>
       </div>
     </button>
+  );
+}
+
+/* ─── BentoCollage — fixed-height container, explicit grid-template ──── */
+interface CollageProps {
+  images: { src: string; alt: string }[];
+  onOpen: (index: number) => void;
+}
+
+function BentoCollage({ images, onOpen }: CollageProps) {
+  if (images.length === 0) return null;
+  const H = "clamp(240px, 40vw, 500px)";
+
+  // 1 image
+  if (images.length === 1) {
+    return (
+      <div style={{ height: "clamp(200px, 35vw, 420px)" }} className="relative rounded-lg overflow-hidden bg-[#111]">
+        <CollageCell image={images[0]} index={0} onOpen={onOpen} />
+      </div>
+    );
+  }
+
+  // 2 images — equal columns
+  if (images.length === 2) {
+    return (
+      <div
+        className="grid gap-2 sm:gap-3"
+        style={{ gridTemplateColumns: "1fr 1fr", height: H }}
+      >
+        {images.map((img, i) => <CollageCell key={i} image={img} index={i} onOpen={onOpen} />)}
+      </div>
+    );
+  }
+
+  // 3 images — big left 2/3, two stacked right 1/3
+  if (images.length === 3) {
+    return (
+      <div
+        className="grid gap-2 sm:gap-3"
+        style={{ gridTemplateColumns: "2fr 1fr", gridTemplateRows: "1fr 1fr", height: H }}
+      >
+        <CollageCell image={images[0]} index={0} onOpen={onOpen} gridRow="1 / 3" />
+        <CollageCell image={images[1]} index={1} onOpen={onOpen} />
+        <CollageCell image={images[2]} index={2} onOpen={onOpen} />
+      </div>
+    );
+  }
+
+  // 4 images — tall hero left spanning 2 rows, 3 on the right
+  if (images.length === 4) {
+    return (
+      <div
+        className="grid gap-2 sm:gap-3"
+        style={{ gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", height: H }}
+      >
+        <CollageCell image={images[0]} index={0} onOpen={onOpen} gridRow="1 / 3" />
+        <CollageCell image={images[1]} index={1} onOpen={onOpen} />
+        <CollageCell image={images[2]} index={2} onOpen={onOpen} />
+      </div>
+    );
+  }
+
+  // 5 images — hero top-left spanning 2 rows, 2 right col, 2 bottom row
+  if (images.length === 5) {
+    const tH = `clamp(280px, 50vw, 580px)`;
+    return (
+      <div
+        className="grid gap-2 sm:gap-3"
+        style={{ gridTemplateColumns: "2fr 1fr", gridTemplateRows: "1fr 1fr 1fr", height: tH }}
+      >
+        <CollageCell image={images[0]} index={0} onOpen={onOpen} gridRow="1 / 3" />
+        <CollageCell image={images[1]} index={1} onOpen={onOpen} />
+        <CollageCell image={images[2]} index={2} onOpen={onOpen} />
+        <CollageCell image={images[3]} index={3} onOpen={onOpen} gridColumn="1 / 2" />
+        <CollageCell image={images[4]} index={4} onOpen={onOpen} gridColumn="2 / 3" />
+      </div>
+    );
+  }
+
+  // 6 images — 3 top, 3 bottom equal grid
+  const sixH = `clamp(240px, 46vw, 560px)`;
+  return (
+    <div
+      className="grid gap-2 sm:gap-3"
+      style={{ gridTemplateColumns: "2fr 1fr 1fr", gridTemplateRows: "1fr 1fr", height: sixH }}
+    >
+      {/* Big hero left, spans 2 rows */}
+      <CollageCell image={images[0]} index={0} onOpen={onOpen} gridRow="1 / 3" />
+      {/* Right 2 cols, 2 rows = 4 cells */}
+      <CollageCell image={images[1]} index={1} onOpen={onOpen} />
+      <CollageCell image={images[2]} index={2} onOpen={onOpen} />
+      <CollageCell image={images[3]} index={3} onOpen={onOpen} />
+      <CollageCell image={images[4]} index={4} onOpen={onOpen} />
+    </div>
   );
 }
 

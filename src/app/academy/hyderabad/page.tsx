@@ -240,17 +240,29 @@ export default function HyderabadAcademy() {
             </div>
           </div>
 
-          {/* ── Image Grid – unique layout: 1 large left + 2 stacked right ── */}
-          <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-4 sm:gap-6 mb-16 sm:mb-20">
-            <div className="relative aspect-[4/5] md:aspect-auto rounded-xl overflow-hidden">
-              <Image src="/assets/hyderabad_new3.jpeg" alt="Hyderabad Academy – Karts lined up on the race grid" fill className="object-cover hover:scale-105 transition-transform duration-700" />
-            </div>
-            <div className="flex flex-col gap-4 sm:gap-6">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                <Image src="/assets/hyderabad_new1.jpeg" alt="Hyderabad Academy – Track briefing with the coach" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+          {/* ── Photo Collage (bento) ── */}
+          <div className="mb-12 sm:mb-16">
+            {/*
+              Fixed-height bento: [BIG | top-right ]
+                                   [BIG | bot-right ]
+              gridRow: 1/3 on the hero; two equal halves on the right.
+            */}
+            <div
+              className="grid gap-2 sm:gap-3 w-full"
+              style={{
+                gridTemplateColumns: "2fr 1fr",
+                gridTemplateRows: "1fr 1fr",
+                height: "clamp(260px, 42vw, 520px)",
+              }}
+            >
+              <div className="relative rounded-xl overflow-hidden bg-[#111]" style={{ gridRow: "1 / 3" }}>
+                <Image src="/assets/hyderabad_new3.jpeg" alt="Hyderabad Academy – Kart grid lineup" fill sizes="66vw" className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                <Image src="/assets/hyderabad_new4.jpeg" alt="Hyderabad Academy – Race grid formation" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+              <div className="relative rounded-xl overflow-hidden bg-[#111]">
+                <Image src="/assets/hyderabad_new1.jpeg" alt="Hyderabad Academy – Track briefing" fill sizes="33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="relative rounded-xl overflow-hidden bg-[#111]">
+                <Image src="/assets/hyderabad_new4.jpeg" alt="Hyderabad Academy – Race grid formation" fill sizes="33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
           </div>
