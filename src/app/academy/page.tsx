@@ -40,11 +40,11 @@ const PROGRAMS: AcademyProgram[] = [
   {
     city: "COIMBATORE",
     slug: "coimbatore",
-    title: "FORMULA CAR ACADEMY",
-    status: "13–14 April",
+    title: "FORMULA 1300 TRAINING + SCHOLARSHIP PROGRAM",
+    status: "5–6 May",
     location: "Kari Motor Speedway, Coimbatore",
-    image: "/assets/coimbatore.jpeg",
-    heading: "COIMBATORE FORMULA CAR ACADEMY",
+    image: "/assets/coimbatore_new_banner.jpeg",
+    heading: "COIMBATORE FORMULA 1300 ACADEMY",
   },
   {
     city: "AHMEDABAD",
