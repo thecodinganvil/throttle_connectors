@@ -161,18 +161,20 @@ export default function CoimbatoreAcademy() {
         <div className="coimb-banner relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-8">
           <Image src="/assets/coimbatore_new_banner.jpeg" alt="Formula 1300 Academy – Kari Motor Speedway, Coimbatore" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-black/30" />
-          {/* location badge */}
-          <div className="absolute bottom-5 left-5 sm:bottom-7 sm:left-7">
-            <p className="text-white/50 text-xs tracking-[0.22em] uppercase mb-1">Venue</p>
-            <p className="font-[family-name:var(--font-bebas)] text-cyan text-xl sm:text-3xl tracking-wide flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
-              Kari Motor Speedway, Coimbatore
-            </p>
-          </div>
-          {/* date badge */}
-          <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-7 text-right">
-            <p className="text-white/50 text-xs tracking-[0.22em] uppercase mb-1">Dates</p>
-            <p className="font-[family-name:var(--font-bebas)] text-white text-xl sm:text-3xl tracking-wide">5–6 May</p>
+          <div className="absolute inset-x-5 bottom-5 sm:inset-x-7 sm:bottom-7 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+            {/* location badge */}
+            <div>
+              <p className="text-white/50 text-xs tracking-[0.22em] uppercase mb-1">Venue</p>
+              <p className="font-[family-name:var(--font-bebas)] text-cyan text-xl sm:text-3xl tracking-wide flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                Kari Motor Speedway, Coimbatore
+              </p>
+            </div>
+            {/* date badge */}
+            <div className="sm:text-right">
+              <p className="text-white/50 text-xs tracking-[0.22em] uppercase mb-1">Dates</p>
+              <p className="font-[family-name:var(--font-bebas)] text-white text-xl sm:text-3xl tracking-wide">5–6 May</p>
+            </div>
           </div>
         </div>
 
