@@ -47,12 +47,14 @@ const PROGRAMS: AcademyProgram[] = [
     heading: "COIMBATORE FORMULA 1300 ACADEMY",
   },
   {
-    city: "AHMEDABAD",
-    slug: "ahmedabad",
+    city: "DELHI NCR",
+    slug: "delhi-ncr",
     title: "KARTING ACADEMY",
-    status: "Launching Soon",
-    location: "Venue TBA",
-    image: "/assets/ahmedabad.jpeg",
+    status: "25–26 May",
+    location: "Reveal soon",
+    image: "/assets/delhi-ncr-banner.jpeg",
+    heading: "DELHI NCR ACADEMY",
+    isNew: true,
   },
 ];
 
